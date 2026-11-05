@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['deserializeconnack_0',['deserializeConnack',['../core__mqtt__serializer_8c.html#aa7b25e1e3114536e9b0526fc93a1f76c',1,'core_mqtt_serializer.c']]],
-  ['deserializepingresp_1',['deserializePingresp',['../core__mqtt__serializer_8c.html#afdd9b08562ccaa6cf8dd68baa6bc7060',1,'core_mqtt_serializer.c']]],
-  ['deserializepublish_2',['deserializePublish',['../core__mqtt__serializer_8c.html#a6e8bcde1280e14706e0cb9180358607c',1,'core_mqtt_serializer.c']]],
-  ['deserializesimpleack_3',['deserializeSimpleAck',['../core__mqtt__serializer_8c.html#a5d437c287290fa28a0ed65635fd6c9ae',1,'core_mqtt_serializer.c']]],
-  ['deserializesuback_4',['deserializeSuback',['../core__mqtt__serializer_8c.html#ae7b71036fc19c9a6da480dcfd3a2387b',1,'core_mqtt_serializer.c']]],
-  ['discardpacket_5',['discardPacket',['../core__mqtt_8c.html#abb02f1853a4805205636f2c11a435216',1,'core_mqtt.c']]],
-  ['discardstoredpacket_6',['discardStoredPacket',['../core__mqtt_8c.html#af827b2088c38c31a0b75dc70377db536',1,'core_mqtt.c']]]
+  ['calculateelapsedtime_0',['calculateElapsedTime',['../core__mqtt_8c.html#a04f9f5742bc28fe29e61f3f46d20d3d6',1,'core_mqtt.c']]],
+  ['calculatepublishpacketsize_1',['calculatePublishPacketSize',['../core__mqtt__serializer_8c.html#af5170d368fc23fc0d8e1a5d89e370bf7',1,'core_mqtt_serializer.c']]],
+  ['calculatesubscriptionpacketsize_2',['calculateSubscriptionPacketSize',['../core__mqtt__serializer_8c.html#ae5a41bbfba14b60d7f76c2ae729e3f8b',1,'core_mqtt_serializer.c']]],
+  ['checkonce_3',['checkOnce',['../core__mqtt__serializer_8c.html#a6cbb947c39634d9292c06400620d620a',1,'core_mqtt_serializer.c']]],
+  ['checkpropbuilderparams_4',['checkPropBuilderParams',['../core__mqtt__prop__deserializer_8c.html#a8d8e01ba1eadbaa438e1ca492ad70f71',1,'core_mqtt_prop_deserializer.c']]],
+  ['checkpublishremaininglength_5',['checkPublishRemainingLength',['../core__mqtt__serializer_8c.html#af85f85a24e0cec5bf6d3e2f3b8eb1214',1,'core_mqtt_serializer.c']]],
+  ['checkwildcardsubscriptions_6',['checkWildcardSubscriptions',['../core__mqtt_8c.html#a3be6306db7a810bd7fa88a12fb4e667d',1,'core_mqtt.c']]],
+  ['compactrecords_7',['compactRecords',['../core__mqtt__state_8c.html#a6cd7b86de2ddb125fee886d58d1a5fd4',1,'core_mqtt_state.c']]]
 ];

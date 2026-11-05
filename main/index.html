@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -100,13 +100,13 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>MQTT 3.1.1 client library<a class="anchor" id="mqtt"></a></p>
+<div class="textblock"><p>MQTT 5.0 client library<a class="anchor" id="mqtt"></a></p>
 <blockquote class="doxtable">
 <p>&zwj;MQTT stands for MQ Telemetry Transport. It is a publish/subscribe, extremely simple and lightweight messaging protocol, designed for constrained devices and low-bandwidth, high-latency or unreliable networks. The design principles are to minimise network bandwidth and device resource requirements whilst also attempting to ensure reliability and some degree of assurance of delivery. These principles also turn out to make the protocol ideal of the emerging "machine-to-machine" (M2M) or "Internet of Things" world of connected devices, and for mobile applications where bandwidth and battery power are at a premium. </p>
 </blockquote>
 <p><span style="float:right;margin-right:4em"> &mdash; <em>Official description of MQTT from <a href="https://mqtt.org">mqtt.org</a></em></span><br  />
 </p>
-<p>This MQTT library implements the client side of the MQTT 3.1.1 protocol. This library is optimized for resource constrained embedded devices. Features of this library include:</p><ul>
+<p>This MQTT library implements the client side of the MQTT 5.0 protocol. This library is optimized for resource constrained embedded devices. Features of this library include:</p><ul>
 <li>Fully synchronous API, to allow applications to completely manage their concurrency and multi-threading method.</li>
 <li>Operations on fixed buffers, so that applications may control their memory allocation strategy.</li>
 <li>Scalable performance and footprint. The <a class="el" href="core_mqtt_config.html">configuration settings</a> allow this library to be tailored to a system's resources.</li>
@@ -121,13 +121,19 @@ Memory Requirements</h1>
 <tr>
 <td><b>File</b> </td><td><b><center>With -O1 Optimization</center></b> </td><td><b><center>With -Os Optimization</center></b>  </td></tr>
 <tr>
-<td><a class="el" href="core__mqtt_8c.html" title="Implements the user-facing functions in core_mqtt.h.">core_mqtt.c</a> </td><td><center>4.1K</center> </td><td><center>3.5K</center>  </td></tr>
+<td><a class="el" href="core__mqtt_8c.html" title="Implements the user-facing functions in core_mqtt.h.">core_mqtt.c</a> </td><td><center>8.4K</center> </td><td><center>7.3K</center>  </td></tr>
 <tr>
 <td><a class="el" href="core__mqtt__state_8c.html" title="Implements the functions in core_mqtt_state.h.">core_mqtt_state.c</a> </td><td><center>1.7K</center> </td><td><center>1.3K</center>  </td></tr>
 <tr>
-<td><a class="el" href="core__mqtt__serializer_8c.html" title="Implements the user-facing functions in core_mqtt_serializer.h.">core_mqtt_serializer.c</a> </td><td><center>2.8K</center> </td><td><center>2.2K</center>  </td></tr>
+<td><a class="el" href="core__mqtt__serializer_8c.html" title="Implements the user-facing functions in core_mqtt_serializer.h.">core_mqtt_serializer.c</a> </td><td><center>9.5K</center> </td><td><center>7.4K</center>  </td></tr>
 <tr>
-<td><b>Total estimates</b> </td><td><b><center>8.6K</center></b> </td><td><b><center>7.0K</center></b>  </td></tr>
+<td><a class="el" href="core__mqtt__serializer__private_8c.html" title="Implements private functions used by serializer and deserializer. DO NOT use these functions in your ...">core_mqtt_serializer_private.c</a> </td><td><center>0.8K</center> </td><td><center>0.7K</center>  </td></tr>
+<tr>
+<td><a class="el" href="core__mqtt__prop__serializer_8c.html" title="Implements the user-facing functions to serialize user-properties.">core_mqtt_prop_serializer.c</a> </td><td><center>1.6K</center> </td><td><center>1.4K</center>  </td></tr>
+<tr>
+<td><a class="el" href="core__mqtt__prop__deserializer_8c.html" title="Implements the user-facing functions to de-serialize user-properties.">core_mqtt_prop_deserializer.c</a> </td><td><center>1.3K</center> </td><td><center>1.0K</center>  </td></tr>
+<tr>
+<td><b>Total estimates</b> </td><td><b><center>23.3K</center></b> </td><td><b><center>19.1K</center></b>  </td></tr>
 </table>
  </p>
 </div></div><!-- PageDoc -->

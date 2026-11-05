@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -126,14 +126,24 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>outgoingPublishReco
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>incomingPublishRecordMaxCount</b></td></tr>
 <tr class="memdesc:aa33ed2e10380a854629f1386d0323ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of incoming publish records. <br /></td></tr>
 <tr class="separator:aa33ed2e10380a854629f1386d0323ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f53daad37114ddff6ef17e9deffc733"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_q_t_t_context__t.html#a7f53daad37114ddff6ef17e9deffc733">outgoingPublishRecordMaxCountConfigured</a></td></tr>
+<tr class="memdesc:a7f53daad37114ddff6ef17e9deffc733"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application-configured maximum number of outgoing publish records, as passed to <a class="el" href="core__mqtt_8h.html#a5cccbe5ebf767a6da5fc83db6ca8cbdf" title="Initialize an MQTT context for QoS &gt; 0.">MQTT_InitStatefulQoS</a>.  <br /></td></tr>
+<tr class="separator:a7f53daad37114ddff6ef17e9deffc733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb0bc81f8499ee28fb7fd4336f3573c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_q_t_t_context__t.html#adcb0bc81f8499ee28fb7fd4336f3573c">incomingPublishRecordMaxCountConfigured</a></td></tr>
+<tr class="memdesc:adcb0bc81f8499ee28fb7fd4336f3573c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application-configured maximum number of incoming publish records, as passed to <a class="el" href="core__mqtt_8h.html#a5cccbe5ebf767a6da5fc83db6ca8cbdf" title="Initialize an MQTT context for QoS &gt; 0.">MQTT_InitStatefulQoS</a>.  <br /></td></tr>
+<tr class="separator:adcb0bc81f8499ee28fb7fd4336f3573c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87ab9d61e7711325c2c85ce3ce63386a"><td class="memItemLeft" align="right" valign="top"><a id="a87ab9d61e7711325c2c85ce3ce63386a" name="a87ab9d61e7711325c2c85ce3ce63386a"></a>
 <a class="el" href="struct_transport_interface__t.html">TransportInterface_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>transportInterface</b></td></tr>
 <tr class="memdesc:a87ab9d61e7711325c2c85ce3ce63386a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transport interface used by the MQTT connection. <br /></td></tr>
 <tr class="separator:a87ab9d61e7711325c2c85ce3ce63386a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a231c5576a6ce389317a3f00f95628276"><td class="memItemLeft" align="right" valign="top"><a id="a231c5576a6ce389317a3f00f95628276" name="a231c5576a6ce389317a3f00f95628276"></a>
 <a class="el" href="struct_m_q_t_t_fixed_buffer__t.html">MQTTFixedBuffer_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>networkBuffer</b></td></tr>
-<tr class="memdesc:a231c5576a6ce389317a3f00f95628276"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer used in sending and receiving packets from the network. <br /></td></tr>
+<tr class="memdesc:a231c5576a6ce389317a3f00f95628276"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer used in receiving packets from the network. <br /></td></tr>
 <tr class="separator:a231c5576a6ce389317a3f00f95628276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc6db180acbc7cc7b1ef7c2f5f553631"><td class="memItemLeft" align="right" valign="top"><a id="acc6db180acbc7cc7b1ef7c2f5f553631" name="acc6db180acbc7cc7b1ef7c2f5f553631"></a>
+<a class="el" href="struct_m_q_t_t_prop_builder__t.html">MQTTPropBuilder_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ackPropsBuffer</b></td></tr>
+<tr class="memdesc:acc6db180acbc7cc7b1ef7c2f5f553631"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer used to store properties for outgoing ack packets. <br /></td></tr>
+<tr class="separator:acc6db180acbc7cc7b1ef7c2f5f553631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af47ed55ad7e9bb112324f5f209b70534"><td class="memItemLeft" align="right" valign="top"><a id="af47ed55ad7e9bb112324f5f209b70534" name="af47ed55ad7e9bb112324f5f209b70534"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>nextPacketId</b></td></tr>
 <tr class="memdesc:af47ed55ad7e9bb112324f5f209b70534"><td class="mdescLeft">&#160;</td><td class="mdescRight">The next available ID for outgoing MQTT packets. <br /></td></tr>
@@ -147,7 +157,7 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>nextPacketId</b><
 <tr class="memdesc:aabe1d302a16771292151013e8e30c582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to get millisecond timestamps. <br /></td></tr>
 <tr class="separator:aabe1d302a16771292151013e8e30c582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73bd9259db9c3a9b84518cbf928ed91f"><td class="memItemLeft" align="right" valign="top"><a id="a73bd9259db9c3a9b84518cbf928ed91f" name="a73bd9259db9c3a9b84518cbf928ed91f"></a>
-<a class="el" href="group__mqtt__callback__types.html#ga00d348277ed4fde23c95bfc749ae954a">MQTTEventCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>appCallback</b></td></tr>
+<a class="el" href="group__mqtt__callback__types.html#ga5ff18bbacb958f5973e7bc4ab035f98b">MQTTEventCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>appCallback</b></td></tr>
 <tr class="memdesc:a73bd9259db9c3a9b84518cbf928ed91f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function used to give deserialized MQTT packets to the application. <br /></td></tr>
 <tr class="separator:a73bd9259db9c3a9b84518cbf928ed91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01acf90953e830ba3e7f44182cb1d482"><td class="memItemLeft" align="right" valign="top"><a id="a01acf90953e830ba3e7f44182cb1d482" name="a01acf90953e830ba3e7f44182cb1d482"></a>
@@ -178,10 +188,61 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>pingReqSendTimeMs
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>waitingForPingResp</b></td></tr>
 <tr class="memdesc:ac7073f43645f7b7c0c5b7763980004bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the library is currently awaiting a PINGRESP. <br /></td></tr>
 <tr class="separator:ac7073f43645f7b7c0c5b7763980004bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9914b8259063a3ee3b77b90de0ad6507"><td class="memItemLeft" align="right" valign="top"><a id="a9914b8259063a3ee3b77b90de0ad6507" name="a9914b8259063a3ee3b77b90de0ad6507"></a>
+<a class="el" href="struct_m_q_t_t_connection_properties__t.html">MQTTConnectionProperties_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>connectionProperties</b></td></tr>
+<tr class="memdesc:a9914b8259063a3ee3b77b90de0ad6507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Persistent Connection Properties, populated in the CONNECT and the CONNACK. <br /></td></tr>
+<tr class="separator:a9914b8259063a3ee3b77b90de0ad6507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac205fc33078b0cfa0dfc62807bd9574f"><td class="memItemLeft" align="right" valign="top"><a id="ac205fc33078b0cfa0dfc62807bd9574f" name="ac205fc33078b0cfa0dfc62807bd9574f"></a>
+<a class="el" href="core__mqtt_8h.html#a40084bbbc7f051fc115edd15c338fff6">MQTTStorePacketForRetransmit</a>&#160;</td><td class="memItemRight" valign="bottom"><b>storeFunction</b></td></tr>
+<tr class="memdesc:ac205fc33078b0cfa0dfc62807bd9574f"><td class="mdescLeft">&#160;</td><td class="mdescRight">User defined API used to store outgoing publishes. <br /></td></tr>
+<tr class="separator:ac205fc33078b0cfa0dfc62807bd9574f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270e9e595ecd60948c960d059f8fe718"><td class="memItemLeft" align="right" valign="top"><a id="a270e9e595ecd60948c960d059f8fe718" name="a270e9e595ecd60948c960d059f8fe718"></a>
+<a class="el" href="core__mqtt_8h.html#a34d467d70684aa62c91221ea747acbe4">MQTTRetrievePacketForRetransmit</a>&#160;</td><td class="memItemRight" valign="bottom"><b>retrieveFunction</b></td></tr>
+<tr class="memdesc:a270e9e595ecd60948c960d059f8fe718"><td class="mdescLeft">&#160;</td><td class="mdescRight">User defined API used to retreive a copied publish for resend operation. <br /></td></tr>
+<tr class="separator:a270e9e595ecd60948c960d059f8fe718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e3d500e6efa050d6e666aefa3ff577"><td class="memItemLeft" align="right" valign="top"><a id="a36e3d500e6efa050d6e666aefa3ff577" name="a36e3d500e6efa050d6e666aefa3ff577"></a>
+<a class="el" href="core__mqtt_8h.html#a0ca27699ce7ac7a8f80a2eac6b28592b">MQTTClearPacketForRetransmit</a>&#160;</td><td class="memItemRight" valign="bottom"><b>clearFunction</b></td></tr>
+<tr class="memdesc:a36e3d500e6efa050d6e666aefa3ff577"><td class="mdescLeft">&#160;</td><td class="mdescRight">User defined API used to clear a particular copied publish packet. <br /></td></tr>
+<tr class="separator:a36e3d500e6efa050d6e666aefa3ff577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A struct representing an MQTT connection. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a7f53daad37114ddff6ef17e9deffc733" name="a7f53daad37114ddff6ef17e9deffc733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f53daad37114ddff6ef17e9deffc733">&#9670;&#160;</a></span>outgoingPublishRecordMaxCountConfigured</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t MQTTContext_t::outgoingPublishRecordMaxCountConfigured</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The application-configured maximum number of outgoing publish records, as passed to <a class="el" href="core__mqtt_8h.html#a5cccbe5ebf767a6da5fc83db6ca8cbdf" title="Initialize an MQTT context for QoS &gt; 0.">MQTT_InitStatefulQoS</a>. </p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="struct_m_q_t_t_context__t.html#a2851073e252d1e744596272ef13dd14a" title="The maximum number of outgoing publish records.">outgoingPublishRecordMaxCount</a> is the effective limit actually used by the state engine; it is recomputed as the minimum of this configured value and the server's Receive Maximum on every successful <a class="el" href="core__mqtt_8h.html#a454a3ec3559a26e007a76f0efeb25c4b" title="Establish an MQTT session.">MQTT_Connect</a>. This configured value is preserved so the effective limit can be restored (not just monotonically shrunk) across reconnects. </dd></dl>
+
+</div>
+</div>
+<a id="adcb0bc81f8499ee28fb7fd4336f3573c" name="adcb0bc81f8499ee28fb7fd4336f3573c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb0bc81f8499ee28fb7fd4336f3573c">&#9670;&#160;</a></span>incomingPublishRecordMaxCountConfigured</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t MQTTContext_t::incomingPublishRecordMaxCountConfigured</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The application-configured maximum number of incoming publish records, as passed to <a class="el" href="core__mqtt_8h.html#a5cccbe5ebf767a6da5fc83db6ca8cbdf" title="Initialize an MQTT context for QoS &gt; 0.">MQTT_InitStatefulQoS</a>. </p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="struct_m_q_t_t_context__t.html#aa33ed2e10380a854629f1386d0323ea8" title="The maximum number of incoming publish records.">incomingPublishRecordMaxCount</a> is the effective limit actually used by the state engine; it is recomputed as the minimum of this configured value and the client's Receive Maximum on every successful <a class="el" href="core__mqtt_8h.html#a454a3ec3559a26e007a76f0efeb25c4b" title="Establish an MQTT session.">MQTT_Connect</a>. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="core__mqtt_8h_source.html">core_mqtt.h</a></li>
 </ul>
 </div><!-- contents -->

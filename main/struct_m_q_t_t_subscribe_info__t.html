@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -112,20 +112,49 @@ $(document).ready(function(){initNavTree('struct_m_q_t_t_subscribe_info__t.html'
 Data Fields</h2></td></tr>
 <tr class="memitem:a64cf2e423f60cfec122eeaef80c0fd86"><td class="memItemLeft" align="right" valign="top"><a id="a64cf2e423f60cfec122eeaef80c0fd86" name="a64cf2e423f60cfec122eeaef80c0fd86"></a>
 <a class="el" href="group__mqtt__enum__types.html#gae308a5928d7f537379c29a894228093a">MQTTQoS_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>qos</b></td></tr>
-<tr class="memdesc:a64cf2e423f60cfec122eeaef80c0fd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quality of Service for subscription. <br /></td></tr>
+<tr class="memdesc:a64cf2e423f60cfec122eeaef80c0fd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quality of Service for subscription. Include protocol error of qos &gt; 2. <br /></td></tr>
 <tr class="separator:a64cf2e423f60cfec122eeaef80c0fd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb0b28240fdcd82a85f11cf2f8b5bbf0"><td class="memItemLeft" align="right" valign="top"><a id="adb0b28240fdcd82a85f11cf2f8b5bbf0" name="adb0b28240fdcd82a85f11cf2f8b5bbf0"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>pTopicFilter</b></td></tr>
 <tr class="memdesc:adb0b28240fdcd82a85f11cf2f8b5bbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Topic filter to subscribe to. <br /></td></tr>
 <tr class="separator:adb0b28240fdcd82a85f11cf2f8b5bbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6972f8e036f8bde9b1f23a2aacb61382"><td class="memItemLeft" align="right" valign="top"><a id="a6972f8e036f8bde9b1f23a2aacb61382" name="a6972f8e036f8bde9b1f23a2aacb61382"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>topicFilterLength</b></td></tr>
-<tr class="memdesc:a6972f8e036f8bde9b1f23a2aacb61382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of subscription topic filter. <br /></td></tr>
-<tr class="separator:a6972f8e036f8bde9b1f23a2aacb61382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5849d6d2b87a8bcef894cb92bddc9d14"><td class="memItemLeft" align="right" valign="top"><a id="a5849d6d2b87a8bcef894cb92bddc9d14" name="a5849d6d2b87a8bcef894cb92bddc9d14"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>topicFilterLength</b></td></tr>
+<tr class="memdesc:a5849d6d2b87a8bcef894cb92bddc9d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of subscription topic filter - unsigned long. <br /></td></tr>
+<tr class="separator:a5849d6d2b87a8bcef894cb92bddc9d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a417e8150a741cfe92e7176209d326c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_q_t_t_subscribe_info__t.html#a9a417e8150a741cfe92e7176209d326c">noLocalOption</a></td></tr>
+<tr class="memdesc:a9a417e8150a741cfe92e7176209d326c"><td class="mdescLeft">&#160;</td><td class="mdescRight">no local option for subscription. Include protocol error if noLocalOption = 1 in a shared subscription  <br /></td></tr>
+<tr class="separator:a9a417e8150a741cfe92e7176209d326c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea94e01ac69e4744710bb50fdebe503"><td class="memItemLeft" align="right" valign="top"><a id="a4ea94e01ac69e4744710bb50fdebe503" name="a4ea94e01ac69e4744710bb50fdebe503"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>retainAsPublishedOption</b></td></tr>
+<tr class="memdesc:a4ea94e01ac69e4744710bb50fdebe503"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, Application Messages forwarded using this subscription keep the RETAIN flag they were published with. <br /></td></tr>
+<tr class="separator:a4ea94e01ac69e4744710bb50fdebe503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c895ef9d14fb6202d07d4e8e5d1073"><td class="memItemLeft" align="right" valign="top"><a id="a65c895ef9d14fb6202d07d4e8e5d1073" name="a65c895ef9d14fb6202d07d4e8e5d1073"></a>
+<a class="el" href="group__mqtt__enum__types.html#ga276a86010075cf64d522fe56cabee1e3">MQTTRetainHandling_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>retainHandlingOption</b></td></tr>
+<tr class="memdesc:a65c895ef9d14fb6202d07d4e8e5d1073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies whether retained messages are sent when the subscription is established. <br /></td></tr>
+<tr class="separator:a65c895ef9d14fb6202d07d4e8e5d1073"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>MQTT SUBSCRIBE packet parameters. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a9a417e8150a741cfe92e7176209d326c" name="a9a417e8150a741cfe92e7176209d326c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a417e8150a741cfe92e7176209d326c">&#9670;&#160;</a></span>noLocalOption</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MQTTSubscribeInfo_t::noLocalOption</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>no local option for subscription. Include protocol error if noLocalOption = 1 in a shared subscription </p>
+<p>If true, Application Messages that are published to this subscription will not be forwarded to the Client that published them. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="core__mqtt__serializer_8h_source.html">core_mqtt_serializer.h</a></li>
 </ul>
 </div><!-- contents -->

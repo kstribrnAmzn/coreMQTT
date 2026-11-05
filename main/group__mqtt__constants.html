@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -98,7 +98,8 @@ $(document).ready(function(){initNavTree('group__mqtt__constants.html',''); init
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Constants</div></div>
 </div><!--header-->
 <div class="contents">
@@ -171,6 +172,34 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PACKET_TYPE_DISCONNECT</b>&#160;&#160;&#160;( ( uint8_t ) 0xE0U )</td></tr>
 <tr class="memdesc:gaed07155a3d6fa4b7624b9f36ed33ec6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">DISCONNECT (client-to-server). <br /></td></tr>
 <tr class="separator:gaed07155a3d6fa4b7624b9f36ed33ec6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14ad742747e745fea71a20ae587db704"><td class="memItemLeft" align="right" valign="top"><a id="ga14ad742747e745fea71a20ae587db704" name="ga14ad742747e745fea71a20ae587db704"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PACKET_TYPE_AUTH</b>&#160;&#160;&#160;( ( uint8_t ) 0xF0U )</td></tr>
+<tr class="memdesc:ga14ad742747e745fea71a20ae587db704"><td class="mdescLeft">&#160;</td><td class="mdescRight">AUTH (bidirectional). <br /></td></tr>
+<tr class="separator:ga14ad742747e745fea71a20ae587db704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7178dd142bbe3d73fd3b5318d45d15ac"><td class="memItemLeft" align="right" valign="top"><a id="ga7178dd142bbe3d73fd3b5318d45d15ac" name="ga7178dd142bbe3d73fd3b5318d45d15ac"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PROP_VALIDATE_CONNECT</b>&#160;&#160;&#160;( &amp;<a class="el" href="group__mqtt__constants.html#ga9436a90d8a7d4d11f7c4f663c6709e6f">MQTT_PACKET_TYPE_CONNECT_VAL</a> )</td></tr>
+<tr class="memdesc:ga7178dd142bbe3d73fd3b5318d45d15ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate property for CONNECT. <br /></td></tr>
+<tr class="separator:ga7178dd142bbe3d73fd3b5318d45d15ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f1a2f553770edad240e7d00e4dba4b5"><td class="memItemLeft" align="right" valign="top"><a id="ga7f1a2f553770edad240e7d00e4dba4b5" name="ga7f1a2f553770edad240e7d00e4dba4b5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PROP_VALIDATE_PUBLISH</b>&#160;&#160;&#160;( &amp;<a class="el" href="group__mqtt__constants.html#gadc4953a4727ab10c3207fdb210baadb0">MQTT_PACKET_TYPE_PUBLISH_VAL</a> )</td></tr>
+<tr class="memdesc:ga7f1a2f553770edad240e7d00e4dba4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate property for PUBLISH. <br /></td></tr>
+<tr class="separator:ga7f1a2f553770edad240e7d00e4dba4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad829d5056991b57bda8790844acf0261"><td class="memItemLeft" align="right" valign="top"><a id="gad829d5056991b57bda8790844acf0261" name="gad829d5056991b57bda8790844acf0261"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PROP_VALIDATE_SUBSCRIBE</b>&#160;&#160;&#160;( &amp;<a class="el" href="group__mqtt__constants.html#ga53e0f4eed48d43e774f88158c9492285">MQTT_PACKET_TYPE_SUBSCRIBE_VAL</a> )</td></tr>
+<tr class="memdesc:gad829d5056991b57bda8790844acf0261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate property for SUBSCRIBE. <br /></td></tr>
+<tr class="separator:gad829d5056991b57bda8790844acf0261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29f7f8b5f55a3231ca836834af5f70c6"><td class="memItemLeft" align="right" valign="top"><a id="ga29f7f8b5f55a3231ca836834af5f70c6" name="ga29f7f8b5f55a3231ca836834af5f70c6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PROP_VALIDATE_UNSUBSCRIBE</b>&#160;&#160;&#160;( &amp;<a class="el" href="group__mqtt__constants.html#ga5d2e37fa177353de06223e01a95b73b8">MQTT_PACKET_TYPE_UNSUBSCRIBE_VAL</a> )</td></tr>
+<tr class="memdesc:ga29f7f8b5f55a3231ca836834af5f70c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate property for UNSUBSCRIBE. <br /></td></tr>
+<tr class="separator:ga29f7f8b5f55a3231ca836834af5f70c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7028680383cf0b6bb0c8beecd977e9c8"><td class="memItemLeft" align="right" valign="top"><a id="ga7028680383cf0b6bb0c8beecd977e9c8" name="ga7028680383cf0b6bb0c8beecd977e9c8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PROP_VALIDATE_DISCONNECT</b>&#160;&#160;&#160;( &amp;<a class="el" href="group__mqtt__constants.html#ga67861726887c5062b2c89386f84ae3fe">MQTT_PACKET_TYPE_DISCONNECT_VAL</a> )</td></tr>
+<tr class="memdesc:ga7028680383cf0b6bb0c8beecd977e9c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate property for DISCONNECT. <br /></td></tr>
+<tr class="separator:ga7028680383cf0b6bb0c8beecd977e9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga338adb276ce6338f17c7d6a513533933"><td class="memItemLeft" align="right" valign="top"><a id="ga338adb276ce6338f17c7d6a513533933" name="ga338adb276ce6338f17c7d6a513533933"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PROP_NO_VALIDATE</b>&#160;&#160;&#160;( NULL )</td></tr>
+<tr class="memdesc:ga338adb276ce6338f17c7d6a513533933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip packet type validation. <br /></td></tr>
+<tr class="separator:ga338adb276ce6338f17c7d6a513533933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga26994fcfacb1cff892caa45ec31ca7c6"><td class="memItemLeft" align="right" valign="top"><a id="ga26994fcfacb1cff892caa45ec31ca7c6" name="ga26994fcfacb1cff892caa45ec31ca7c6"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PUBLISH_ACK_PACKET_SIZE</b>&#160;&#160;&#160;( 4UL )</td></tr>
 <tr class="memdesc:ga26994fcfacb1cff892caa45ec31ca7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of MQTT PUBACK, PUBREC, PUBREL, and PUBCOMP packets, per MQTT spec. <br /></td></tr>
@@ -179,6 +208,28 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_STATE_CURSOR_INITIALIZER</b>&#160;&#160;&#160;( ( size_t ) 0 )</td></tr>
 <tr class="memdesc:ga666ad78e7eaaffa51f5cab96201a9476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializer value for an <a class="el" href="group__mqtt__basic__types.html#ga2ca7d486d83fe555953a8c7876ee0d6e" title="Cursor for iterating through state records.">MQTTStateCursor_t</a>, indicating a search should start at the beginning of a state record array. <br /></td></tr>
 <tr class="separator:ga666ad78e7eaaffa51f5cab96201a9476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga9436a90d8a7d4d11f7c4f663c6709e6f"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mqtt__constants.html#ga9436a90d8a7d4d11f7c4f663c6709e6f">MQTT_PACKET_TYPE_CONNECT_VAL</a> = ( uint8_t ) 0x10U</td></tr>
+<tr class="memdesc:ga9436a90d8a7d4d11f7c4f663c6709e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience pointers for the <code>pOptionalMqttPacketType</code> parameter of the <code>MQTTPropAdd_*</code> functions.  <br /></td></tr>
+<tr class="separator:ga9436a90d8a7d4d11f7c4f663c6709e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc4953a4727ab10c3207fdb210baadb0"><td class="memItemLeft" align="right" valign="top"><a id="gadc4953a4727ab10c3207fdb210baadb0" name="gadc4953a4727ab10c3207fdb210baadb0"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PACKET_TYPE_PUBLISH_VAL</b> = ( uint8_t ) 0x30U</td></tr>
+<tr class="memdesc:gadc4953a4727ab10c3207fdb210baadb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">PUBLISH value for property validation. <br /></td></tr>
+<tr class="separator:gadc4953a4727ab10c3207fdb210baadb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53e0f4eed48d43e774f88158c9492285"><td class="memItemLeft" align="right" valign="top"><a id="ga53e0f4eed48d43e774f88158c9492285" name="ga53e0f4eed48d43e774f88158c9492285"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PACKET_TYPE_SUBSCRIBE_VAL</b> = ( uint8_t ) 0x82U</td></tr>
+<tr class="memdesc:ga53e0f4eed48d43e774f88158c9492285"><td class="mdescLeft">&#160;</td><td class="mdescRight">SUBSCRIBE value for property validation. <br /></td></tr>
+<tr class="separator:ga53e0f4eed48d43e774f88158c9492285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d2e37fa177353de06223e01a95b73b8"><td class="memItemLeft" align="right" valign="top"><a id="ga5d2e37fa177353de06223e01a95b73b8" name="ga5d2e37fa177353de06223e01a95b73b8"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PACKET_TYPE_UNSUBSCRIBE_VAL</b> = ( uint8_t ) 0xA2U</td></tr>
+<tr class="memdesc:ga5d2e37fa177353de06223e01a95b73b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">UNSUBSCRIBE value for property validation. <br /></td></tr>
+<tr class="separator:ga5d2e37fa177353de06223e01a95b73b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67861726887c5062b2c89386f84ae3fe"><td class="memItemLeft" align="right" valign="top"><a id="ga67861726887c5062b2c89386f84ae3fe" name="ga67861726887c5062b2c89386f84ae3fe"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>MQTT_PACKET_TYPE_DISCONNECT_VAL</b> = ( uint8_t ) 0xE0U</td></tr>
+<tr class="memdesc:ga67861726887c5062b2c89386f84ae3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">DISCONNECT value for property validation. <br /></td></tr>
+<tr class="separator:ga67861726887c5062b2c89386f84ae3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Constants defined in the MQTT library. </p>
@@ -196,7 +247,43 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Invalid packet identifier. </p>
-<p>Zero is an invalid packet identifier as per MQTT v3.1.1 spec. </p>
+<p>Zero is an invalid packet identifier as per MQTT 5.0 spec. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga9436a90d8a7d4d11f7c4f663c6709e6f" name="ga9436a90d8a7d4d11f7c4f663c6709e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9436a90d8a7d4d11f7c4f663c6709e6f">&#9670;&#160;</a></span>MQTT_PACKET_TYPE_CONNECT_VAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t MQTT_PACKET_TYPE_CONNECT_VAL = ( uint8_t ) 0x10U</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convenience pointers for the <code>pOptionalMqttPacketType</code> parameter of the <code>MQTTPropAdd_*</code> functions. </p>
+<p>Pass one of these to enable runtime validation that a property is allowed in the intended packet type. Pass <a class="el" href="group__mqtt__constants.html#ga338adb276ce6338f17c7d6a513533933">MQTT_PROP_NO_VALIDATE</a> (NULL) to skip validation.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="core__mqtt__serializer_8h.html#a68a57b8974bb9123001d7048b3b542af">MQTTPropAdd_SessionExpiry</a>( &amp;props, 3600, <a class="code hl_define" href="group__mqtt__constants.html#ga7178dd142bbe3d73fd3b5318d45d15ac">MQTT_PROP_VALIDATE_CONNECT</a> );</div>
+<div class="line"><a class="code hl_function" href="core__mqtt__serializer_8h.html#a0eacc61ec8a6cc13ff4d3669b5718672">MQTTPropAdd_PayloadFormat</a>( &amp;props, 1,    <a class="code hl_define" href="group__mqtt__constants.html#ga7f1a2f553770edad240e7d00e4dba4b5">MQTT_PROP_VALIDATE_PUBLISH</a> );</div>
+<div class="line"><a class="code hl_function" href="core__mqtt__serializer_8h.html#a942a44cc446e7a1aa1d177947f336aa0">MQTTPropAdd_UserProp</a>( &amp;props, &amp;up,       <a class="code hl_define" href="group__mqtt__constants.html#ga338adb276ce6338f17c7d6a513533933">MQTT_PROP_NO_VALIDATE</a> );</div>
+<div class="ttc" id="acore__mqtt__serializer_8h_html_a0eacc61ec8a6cc13ff4d3669b5718672"><div class="ttname"><a href="core__mqtt__serializer_8h.html#a0eacc61ec8a6cc13ff4d3669b5718672">MQTTPropAdd_PayloadFormat</a></div><div class="ttdeci">MQTTStatus_t MQTTPropAdd_PayloadFormat(MQTTPropBuilder_t *pPropertyBuilder, bool payloadFormat, const uint8_t *pOptionalMqttPacketType)</div><div class="ttdoc">Adds Payload Format Indicator property to the MQTT property builder.</div><div class="ttdef"><b>Definition:</b> core_mqtt_prop_serializer.c:989</div></div>
+<div class="ttc" id="acore__mqtt__serializer_8h_html_a68a57b8974bb9123001d7048b3b542af"><div class="ttname"><a href="core__mqtt__serializer_8h.html#a68a57b8974bb9123001d7048b3b542af">MQTTPropAdd_SessionExpiry</a></div><div class="ttdeci">MQTTStatus_t MQTTPropAdd_SessionExpiry(MQTTPropBuilder_t *pPropertyBuilder, uint32_t sessionExpiry, const uint8_t *pOptionalMqttPacketType)</div><div class="ttdoc">Adds Session Expiry Interval property to the MQTT property builder.</div><div class="ttdef"><b>Definition:</b> core_mqtt_prop_serializer.c:805</div></div>
+<div class="ttc" id="acore__mqtt__serializer_8h_html_a942a44cc446e7a1aa1d177947f336aa0"><div class="ttname"><a href="core__mqtt__serializer_8h.html#a942a44cc446e7a1aa1d177947f336aa0">MQTTPropAdd_UserProp</a></div><div class="ttdeci">MQTTStatus_t MQTTPropAdd_UserProp(MQTTPropBuilder_t *pPropertyBuilder, const MQTTUserProperty_t *userProperty, const uint8_t *pOptionalMqttPacketType)</div><div class="ttdoc">Adds User Property to the MQTT property builder.</div><div class="ttdef"><b>Definition:</b> core_mqtt_prop_serializer.c:694</div></div>
+<div class="ttc" id="agroup__mqtt__constants_html_ga338adb276ce6338f17c7d6a513533933"><div class="ttname"><a href="group__mqtt__constants.html#ga338adb276ce6338f17c7d6a513533933">MQTT_PROP_NO_VALIDATE</a></div><div class="ttdeci">#define MQTT_PROP_NO_VALIDATE</div><div class="ttdoc">Skip packet type validation.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:135</div></div>
+<div class="ttc" id="agroup__mqtt__constants_html_ga7178dd142bbe3d73fd3b5318d45d15ac"><div class="ttname"><a href="group__mqtt__constants.html#ga7178dd142bbe3d73fd3b5318d45d15ac">MQTT_PROP_VALIDATE_CONNECT</a></div><div class="ttdeci">#define MQTT_PROP_VALIDATE_CONNECT</div><div class="ttdoc">Validate property for CONNECT.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:130</div></div>
+<div class="ttc" id="agroup__mqtt__constants_html_ga7f1a2f553770edad240e7d00e4dba4b5"><div class="ttname"><a href="group__mqtt__constants.html#ga7f1a2f553770edad240e7d00e4dba4b5">MQTT_PROP_VALIDATE_PUBLISH</a></div><div class="ttdeci">#define MQTT_PROP_VALIDATE_PUBLISH</div><div class="ttdoc">Validate property for PUBLISH.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:131</div></div>
+</div><!-- fragment --><p>CONNECT value for property validation. </p>
 
 </div>
 </div>

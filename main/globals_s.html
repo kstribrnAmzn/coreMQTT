@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -101,14 +101,26 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>sendBuffer()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a7f4f9871c75f8f987e3c86ae910bd982">core_mqtt.c</a></li>
-<li>sendConnectWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a3c6935ecef4879b9aeee05ffb0f0a9cb">core_mqtt.c</a></li>
+<li>sendConnectWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#aad5f0493d1808eff99d088ea5ac8b3b5">core_mqtt.c</a></li>
+<li>sendDisconnectWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#ac792ddfd7727a29ee18a26d46b923652">core_mqtt.c</a></li>
 <li>sendMessageVector()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a39f478d2bb0366a5f14bfa90316d8d26">core_mqtt.c</a></li>
 <li>sendPublishAcks()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#ab4b719d2f726b049c279dcb37fcba840">core_mqtt.c</a></li>
-<li>sendPublishWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#aaaca64a926603116f5dfec4a65f28283">core_mqtt.c</a></li>
-<li>sendSubscribeWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a86259fe46a81f7981a7b43b677ab896d">core_mqtt.c</a></li>
-<li>sendUnsubscribeWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a5fc0209190ce8ce635050195689306e2">core_mqtt.c</a></li>
-<li>serializeConnectPacket()&#160;:&#160;<a class="el" href="core__mqtt__serializer_8c.html#a95bf697a3b1f86950e5c199d9cf3a185">core_mqtt_serializer.c</a></li>
-<li>serializePublishCommon()&#160;:&#160;<a class="el" href="core__mqtt__serializer_8c.html#a6b4138d990e2c8fbedbe28683c0fa83a">core_mqtt_serializer.c</a></li>
+<li>sendPublishAcksWithoutProperty()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#acceb15d0cd3fe0ce049caadb547879a3">core_mqtt.c</a></li>
+<li>sendPublishAcksWithProperty()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a2f1219a4667444a4777afc54d5304033">core_mqtt.c</a></li>
+<li>sendPublishWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a750d27d7f4902668e09d50300cfc65ba">core_mqtt.c</a></li>
+<li>sendSubscribeWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a6e737e481f0484cae194fa5c05bd9417">core_mqtt.c</a></li>
+<li>sendUnsubscribeWithoutCopy()&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a5d576e125ba4854761b1900f6332e076">core_mqtt.c</a></li>
+<li>serializeAckBody()&#160;:&#160;<a class="el" href="core__mqtt__serializer_8c.html#af26347a83a6b6833259d38fa993124ab">core_mqtt_serializer.c</a></li>
+<li>serializeAckFixed()&#160;:&#160;<a class="el" href="core__mqtt__serializer__private_8c.html#ac8ce1855434b61aeb0e7d1f262723bb9">core_mqtt_serializer_private.c</a></li>
+<li>serializeAckWithProperties()&#160;:&#160;<a class="el" href="core__mqtt__serializer_8c.html#a1386a415c14c725148a710a9229b72a2">core_mqtt_serializer.c</a></li>
+<li>serializeConnectFixedHeader()&#160;:&#160;<a class="el" href="core__mqtt__serializer__private_8c.html#ae4a2ea03186dc15dc6607d332fe953d7">core_mqtt_serializer_private.c</a></li>
+<li>serializeConnectPacket()&#160;:&#160;<a class="el" href="core__mqtt__serializer_8c.html#ae56f35d31545ed6567429feefb00a9b5">core_mqtt_serializer.c</a></li>
+<li>serializeDisconnectFixed()&#160;:&#160;<a class="el" href="core__mqtt__serializer__private_8c.html#ab6e65545ba4a14b42287e69a696fad10">core_mqtt_serializer_private.c</a></li>
+<li>serializePublishCommon()&#160;:&#160;<a class="el" href="core__mqtt__serializer_8c.html#a26f645e70b94585245c3545ee3c994b7">core_mqtt_serializer.c</a></li>
+<li>serializeSubscribeHeader()&#160;:&#160;<a class="el" href="core__mqtt__serializer__private_8c.html#a740069a97f44f239d1dd39895c29f763">core_mqtt_serializer_private.c</a></li>
+<li>serializeUnsubscribeHeader()&#160;:&#160;<a class="el" href="core__mqtt__serializer__private_8c.html#a2b2098ac73eb591a6809b5d6517eb96f">core_mqtt_serializer_private.c</a></li>
+<li>SET_INCOMING_PUB_FLAG&#160;:&#160;<a class="el" href="core__mqtt_8c.html#a058b32a397e7f6e6ac1be106b7df5346">core_mqtt.c</a></li>
+<li>setConnackPropBit()&#160;:&#160;<a class="el" href="core__mqtt__serializer_8c.html#a19aa3a5282920678b738fe04e92aee46">core_mqtt_serializer.c</a></li>
 <li>stateSelect()&#160;:&#160;<a class="el" href="core__mqtt__state_8c.html#adfc09b0c75d5de09cd73650f944699c0">core_mqtt_state.c</a></li>
 </ul>
 </div><!-- contents -->

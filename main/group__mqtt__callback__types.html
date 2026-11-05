@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -111,9 +111,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gae3bea55b0e49e5208b8c5709a5ea23aa"><td class="memItemLeft" align="right" valign="top">typedef uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mqtt__callback__types.html#gae3bea55b0e49e5208b8c5709a5ea23aa">MQTTGetCurrentTimeFunc_t</a>) (void)</td></tr>
 <tr class="memdesc:gae3bea55b0e49e5208b8c5709a5ea23aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application provided function to query the time elapsed since a given epoch in milliseconds.  <br /></td></tr>
 <tr class="separator:gae3bea55b0e49e5208b8c5709a5ea23aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00d348277ed4fde23c95bfc749ae954a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mqtt__callback__types.html#ga00d348277ed4fde23c95bfc749ae954a">MQTTEventCallback_t</a>) (struct MQTTContext *pContext, struct MQTTPacketInfo *pPacketInfo, struct MQTTDeserializedInfo *pDeserializedInfo)</td></tr>
-<tr class="memdesc:ga00d348277ed4fde23c95bfc749ae954a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application callback for receiving incoming publishes and incoming acks.  <br /></td></tr>
-<tr class="separator:ga00d348277ed4fde23c95bfc749ae954a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ff18bbacb958f5973e7bc4ab035f98b"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mqtt__callback__types.html#ga5ff18bbacb958f5973e7bc4ab035f98b">MQTTEventCallback_t</a>) (struct MQTTContext *pContext, struct MQTTPacketInfo *pPacketInfo, struct MQTTDeserializedInfo *pDeserializedInfo, enum MQTTSuccessFailReasonCode *pReasonCode, struct MQTTPropBuilder *pSendPropsBuffer, struct MQTTPropBuilder *pGetPropsBuffer)</td></tr>
+<tr class="memdesc:ga5ff18bbacb958f5973e7bc4ab035f98b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application callback for receiving incoming publishes and incoming acks, as well as adding properties to outgoing publish acks.  <br /></td></tr>
+<tr class="separator:ga5ff18bbacb958f5973e7bc4ab035f98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga227df31d6daf07e5d833537c12130167"><td class="memItemLeft" align="right" valign="top">typedef int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mqtt__callback__types.html#ga227df31d6daf07e5d833537c12130167">TransportRecv_t</a>) (<a class="el" href="group__mqtt__struct__types.html#ga7769e434e7811caed8cd6fd7f9ec26ec">NetworkContext_t</a> *pNetworkContext, void *pBuffer, size_t bytesToRecv)</td></tr>
 <tr class="memdesc:ga227df31d6daf07e5d833537c12130167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transport interface for receiving data on the network.  <br /></td></tr>
 <tr class="separator:ga227df31d6daf07e5d833537c12130167"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,28 +147,86 @@ As the timer is supposed to be a millisecond timer returning a 32-bit value, it 
 
 </div>
 </div>
-<a id="ga00d348277ed4fde23c95bfc749ae954a" name="ga00d348277ed4fde23c95bfc749ae954a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga00d348277ed4fde23c95bfc749ae954a">&#9670;&#160;</a></span>MQTTEventCallback_t</h2>
+<a id="ga5ff18bbacb958f5973e7bc4ab035f98b" name="ga5ff18bbacb958f5973e7bc4ab035f98b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ff18bbacb958f5973e7bc4ab035f98b">&#9670;&#160;</a></span>MQTTEventCallback_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* MQTTEventCallback_t) (struct MQTTContext *pContext, struct MQTTPacketInfo *pPacketInfo, struct MQTTDeserializedInfo *pDeserializedInfo)</td>
+          <td class="memname">typedef bool(* MQTTEventCallback_t) (struct MQTTContext *pContext, struct MQTTPacketInfo *pPacketInfo, struct MQTTDeserializedInfo *pDeserializedInfo, enum MQTTSuccessFailReasonCode *pReasonCode, struct MQTTPropBuilder *pSendPropsBuffer, struct MQTTPropBuilder *pGetPropsBuffer)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Application callback for receiving incoming publishes and incoming acks. </p>
-<dl class="section note"><dt>Note</dt><dd>This callback will be called only if packets are deserialized with a result of <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a> or <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca25a3d1747e308e99daa805fe576f84b9">MQTTServerRefused</a>. The latter can be obtained when deserializing a SUBACK, indicating a broker's rejection of a subscribe.</dd></dl>
+<p>Application callback for receiving incoming publishes and incoming acks, as well as adding properties to outgoing publish acks. </p>
+<dl class="section note"><dt>Note</dt><dd>This callback will be called only if packets are deserialized with a result of <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a> or <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca25a3d1747e308e99daa805fe576f84b9">MQTTServerRefused</a>. The latter can be obtained when deserializing a CONNACK indicating a broker's rejection of a connection. For SUBACK and UNSUBACK, the deserialization result will be <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a> even when individual topic filters are rejected; the application should inspect per-topic reason codes via <a class="el" href="struct_m_q_t_t_deserialized_info__t.html#aa6e6ca63ae46b306dd3d304f6f564c29" title="Pointer to deserialized ack info.">MQTTDeserializedInfo_t.pReasonCode</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pContext</td><td>Initialized MQTT context. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pPacketInfo</td><td>Information on the type of incoming MQTT packet. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pDeserializedInfo</td><td>Deserialized information from incoming packet. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pReasonCode</td><td>Reason code for the outgoing acknowledgment. Will be NULL for terminating packets (PUBACK, PUBCOMP, SUBACK, UNSUBACK) where the library does not send a response with a reason code. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pSendPropsBuffer</td><td>Properties to be sent in the outgoing acknowledgment. Will be NULL for terminating packets (PUBACK, PUBCOMP, SUBACK, UNSUBACK) where the library does not send a response with properties. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pGetPropsBuffer</td><td>Properties received in the incoming packet.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Get optional properties of incoming packets by calling these functions:</dd></dl>
+<ul>
+<li>Connack Properties:<ul>
+<li><a class="el" href="core__mqtt__serializer_8h.html#aa6a5c98cf0929d51b83169f6c861bfa0" title="Get Session Expiry Interval property from property builder.">MQTTPropGet_SessionExpiry</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ad82a828e6d299166fc6eebcded636f3d" title="Get Receive Maximum property from property builder.">MQTTPropGet_ReceiveMax</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a9999939b9df9ee3748e7536364cde470" title="Get Maximum QoS property from property builder.">MQTTPropGet_MaxQos</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a321201fd94cb0045c175a18d8aab518a" title="Get Retain Available property from property builder.">MQTTPropGet_RetainAvailable</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a36d98889d757a8dab491ff735ea2c614" title="Get Maximum Packet Size property from property builder.">MQTTPropGet_MaxPacketSize</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a0ad93d838bf88d1837014d868ec78bf4" title="Get Assigned Client Identifier property from property builder.">MQTTPropGet_AssignedClientId</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#aae3f2e17652e2b46bc004ab61ac0f5d9" title="Get Topic Alias Maximum property from property builder.">MQTTPropGet_TopicAliasMax</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#aeeb3fa7a6bb8887036860cdbb7f735f2" title="Get Reason String property from property builder.">MQTTPropGet_ReasonString</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ab0bc946040ace4ca8bef29712e4a8a75" title="Get User Property from property builder.">MQTTPropGet_UserProp</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#aa44abca689de5311a7b9208c97926614" title="Get Wildcard Subscription Available property from property builder.">MQTTPropGet_WildcardId</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a03c9fabd0f7be1ef87aafc758c07e847" title="Get Subscription Identifier Available property from property builder.">MQTTPropGet_SubsIdAvailable</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#aeb3c649b0b6415619c19dbe3e7c7f264" title="Get Shared Subscription Available property from property builder.">MQTTPropGet_SharedSubAvailable</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a28abec58b4f2ebb6e298fd84b7309c46" title="Get Server Keep Alive property from property builder.">MQTTPropGet_ServerKeepAlive</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#abc5ea886e2fb8744e239d88174cbf606" title="Get Response Information property from property builder.">MQTTPropGet_ResponseInfo</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ab21f89b33a0d834bde04a81b46bc4920" title="Get Server Reference property from property builder.">MQTTPropGet_ServerRef</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a494a7f3fc59e534f8f156b2c2e11218a" title="Get Authentication Method property from property builder.">MQTTPropGet_AuthMethod</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ad426691e883c67d25b33902374250f74" title="Get Authentication Data property from property builder.">MQTTPropGet_AuthData</a></li>
+</ul>
+</li>
+<li>Publish Properties:<ul>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a892a6d571ba311023010322573051fe9" title="Get Topic Alias property from property builder.">MQTTPropGet_TopicAlias</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#adf6cf83d3cdcc1ff897aaef2ffa59498" title="Get Payload Format Indicator property from property builder.">MQTTPropGet_PayloadFormatIndicator</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a3282d3f1b5847fd017bd70c760040127" title="Get Response Topic property from property builder.">MQTTPropGet_ResponseTopic</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a57d0b5be13a9062f4d4917a3d030e120" title="Get Correlation Data property from property builder.">MQTTPropGet_CorrelationData</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a3b8104573b072caed2a550d1d0ca1b92" title="Get Message Expiry Interval property from property builder.">MQTTPropGet_MessageExpiryInterval</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a34ca9db573593410637c2cda371d1e41" title="Get the Content Type property from the property builder.">MQTTPropGet_ContentType</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ac66a7eed173968b2a00d7bd29e229444" title="Get Subscription Identifier property from property builder.">MQTTPropGet_SubscriptionId</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ab0bc946040ace4ca8bef29712e4a8a75" title="Get User Property from property builder.">MQTTPropGet_UserProp</a></li>
+</ul>
+</li>
+<li>Ack Properties (PUBACK, PUBREC, PUBREL, PUBCOMP, SUBACK, UNSUBACK):<ul>
+<li><a class="el" href="core__mqtt__serializer_8h.html#aeeb3fa7a6bb8887036860cdbb7f735f2" title="Get Reason String property from property builder.">MQTTPropGet_ReasonString</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ab0bc946040ace4ca8bef29712e4a8a75" title="Get User Property from property builder.">MQTTPropGet_UserProp</a></li>
+</ul>
+</li>
+<li>Disconnect Properties:<ul>
+<li><a class="el" href="core__mqtt__serializer_8h.html#aa6a5c98cf0929d51b83169f6c861bfa0" title="Get Session Expiry Interval property from property builder.">MQTTPropGet_SessionExpiry</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#aeeb3fa7a6bb8887036860cdbb7f735f2" title="Get Reason String property from property builder.">MQTTPropGet_ReasonString</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ab0bc946040ace4ca8bef29712e4a8a75" title="Get User Property from property builder.">MQTTPropGet_UserProp</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#ab21f89b33a0d834bde04a81b46bc4920" title="Get Server Reference property from property builder.">MQTTPropGet_ServerRef</a></li>
+</ul>
+</li>
+</ul>
+<dl class="section warning"><dt>Warning</dt><dd>When iterating through properties in pGetPropsBuffer using <a class="el" href="core__mqtt__serializer_8h.html#a31161169ebc4b2e107f24a65d0314eac" title="Get the property type at the current index in the property builder.">MQTT_GetNextPropertyType</a>, every property MUST be consumed by either calling the corresponding MQTTPropGet_* function or <a class="el" href="core__mqtt__serializer_8h.html#a5f21325b7eb8bb49f3b4f5922f59c10c" title="Skip the next property in the property builder without extracting its value.">MQTT_SkipNextProperty</a>. Failing to advance the index past an unhandled property will cause an infinite loop.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Add optional properties to outgoing publish ack packets by calling these functions:</dd></dl>
+<ul>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a942a44cc446e7a1aa1d177947f336aa0" title="Adds User Property to the MQTT property builder.">MQTTPropAdd_UserProp</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a67b568e5dd77d4bbab897d2cd61e4699" title="Adds Reason String property to the MQTT property builder.">MQTTPropAdd_ReasonString</a> <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+</li>
+<li>true Event callback was able to process the packet</li>
+<li>false This is not an error but just a flag that tells the user that the eventcallback was unable to process a packet due to application specific reasons. The application should recall the processloop after making sure that it would be able to process the received packet again. </li>
+</ul>
 
 </div>
 </div>
@@ -185,7 +243,7 @@ As the timer is supposed to be a millisecond timer returning a 32-bit value, it 
 </div><div class="memdoc">
 
 <p>Transport interface for receiving data on the network. </p>
-<dl class="section note"><dt>Note</dt><dd>It is HIGHLY RECOMMENDED that the transport receive implementation does NOT block. coreMQTT will continue to call the transport interface if it receives a partial packet until it accumulates enough data to get the complete MQTT packet.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It is HIGHLY RECOMMENDED that the transport receive implementation does NOT block. coreMQTT will continue to call the transport interface if it receives a partial packet until it accumulates enough data to get the complete MQTT packet. A non‐blocking implementation is also essential so that the library's inbuilt keep‐alive mechanism can work properly, given the user chooses to use that over their own keep alive mechanism.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pNetworkContext</td><td>Implementation-defined network context. </td></tr>
@@ -242,8 +300,8 @@ As the timer is supposed to be a millisecond timer returning a 32-bit value, it 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pNetworkContext</td><td>Implementation-defined network context. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">pIoVec</td><td>An array of TransportIoVector_t structs. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ioVecCount</td><td>Number of TransportIoVector_t in pIoVec.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pIoVec</td><td>An array of <a class="el" href="struct_transport_out_vector__t.html" title="Transport vector structure for sending multiple messages.">TransportOutVector_t</a> structs. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ioVecCount</td><td>Number of <a class="el" href="struct_transport_out_vector__t.html" title="Transport vector structure for sending multiple messages.">TransportOutVector_t</a> in pIoVec.</td></tr>
   </table>
   </dd>
 </dl>

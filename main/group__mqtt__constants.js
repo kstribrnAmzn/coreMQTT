@@ -16,6 +16,18 @@ var group__mqtt__constants =
     [ "MQTT_PACKET_TYPE_PINGREQ", "group__mqtt__constants.html#gacbe28c7d081275d1805c2142ff792185", null ],
     [ "MQTT_PACKET_TYPE_PINGRESP", "group__mqtt__constants.html#ga285fc02048e2482794042fa98639e514", null ],
     [ "MQTT_PACKET_TYPE_DISCONNECT", "group__mqtt__constants.html#gaed07155a3d6fa4b7624b9f36ed33ec6d", null ],
+    [ "MQTT_PACKET_TYPE_AUTH", "group__mqtt__constants.html#ga14ad742747e745fea71a20ae587db704", null ],
+    [ "MQTT_PROP_VALIDATE_CONNECT", "group__mqtt__constants.html#ga7178dd142bbe3d73fd3b5318d45d15ac", null ],
+    [ "MQTT_PROP_VALIDATE_PUBLISH", "group__mqtt__constants.html#ga7f1a2f553770edad240e7d00e4dba4b5", null ],
+    [ "MQTT_PROP_VALIDATE_SUBSCRIBE", "group__mqtt__constants.html#gad829d5056991b57bda8790844acf0261", null ],
+    [ "MQTT_PROP_VALIDATE_UNSUBSCRIBE", "group__mqtt__constants.html#ga29f7f8b5f55a3231ca836834af5f70c6", null ],
+    [ "MQTT_PROP_VALIDATE_DISCONNECT", "group__mqtt__constants.html#ga7028680383cf0b6bb0c8beecd977e9c8", null ],
+    [ "MQTT_PROP_NO_VALIDATE", "group__mqtt__constants.html#ga338adb276ce6338f17c7d6a513533933", null ],
     [ "MQTT_PUBLISH_ACK_PACKET_SIZE", "group__mqtt__constants.html#ga26994fcfacb1cff892caa45ec31ca7c6", null ],
-    [ "MQTT_STATE_CURSOR_INITIALIZER", "group__mqtt__constants.html#ga666ad78e7eaaffa51f5cab96201a9476", null ]
+    [ "MQTT_STATE_CURSOR_INITIALIZER", "group__mqtt__constants.html#ga666ad78e7eaaffa51f5cab96201a9476", null ],
+    [ "MQTT_PACKET_TYPE_CONNECT_VAL", "group__mqtt__constants.html#ga9436a90d8a7d4d11f7c4f663c6709e6f", null ],
+    [ "MQTT_PACKET_TYPE_PUBLISH_VAL", "group__mqtt__constants.html#gadc4953a4727ab10c3207fdb210baadb0", null ],
+    [ "MQTT_PACKET_TYPE_SUBSCRIBE_VAL", "group__mqtt__constants.html#ga53e0f4eed48d43e774f88158c9492285", null ],
+    [ "MQTT_PACKET_TYPE_UNSUBSCRIBE_VAL", "group__mqtt__constants.html#ga5d2e37fa177353de06223e01a95b73b8", null ],
+    [ "MQTT_PACKET_TYPE_DISCONNECT_VAL", "group__mqtt__constants.html#ga67861726887c5062b2c89386f84ae3fe", null ]
 ];

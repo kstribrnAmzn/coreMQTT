@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -148,6 +148,9 @@ Macros</h2></td></tr>
 <tr class="memitem:af60e8ffc327d136e5d0d8441ed98c98d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__mqtt__config__defaults_8h.html#af60e8ffc327d136e5d0d8441ed98c98d">LogDebug</a>(message)</td></tr>
 <tr class="memdesc:af60e8ffc327d136e5d0d8441ed98c98d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro that is called in the MQTT library for logging "Debug" level messages.  <br /></td></tr>
 <tr class="separator:af60e8ffc327d136e5d0d8441ed98c98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5746dc4ea5f49e1a35ec2c1076dd1913"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__mqtt__config__defaults_8h.html#a5746dc4ea5f49e1a35ec2c1076dd1913">LogTrace</a>(message)</td></tr>
+<tr class="memdesc:a5746dc4ea5f49e1a35ec2c1076dd1913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro that is called in the MQTT library for logging "Trace" level messages.  <br /></td></tr>
+<tr class="separator:a5746dc4ea5f49e1a35ec2c1076dd1913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This represents the default values for the configuration macros for the MQTT library. </p>
@@ -184,7 +187,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The number of retries for receiving CONNACK. </p>
-<p>The MQTT_MAX_CONNACK_RECEIVE_RETRY_COUNT will be used only when the timeoutMs parameter of <a class="el" href="core__mqtt_8h.html#aed1e4dc123a8ba79ac569cb17c69bfa0" title="Establish an MQTT session.">MQTT_Connect</a> is passed as 0 . The transport receive for CONNACK will be retried MQTT_MAX_CONNACK_RECEIVE_RETRY_COUNT times before timing out. A value of 0 for this config will cause the transport receive for CONNACK to be invoked only once.</p>
+<p>The MQTT_MAX_CONNACK_RECEIVE_RETRY_COUNT will be used only when the timeoutMs parameter of <a class="el" href="core__mqtt_8h.html#a454a3ec3559a26e007a76f0efeb25c4b" title="Establish an MQTT session.">MQTT_Connect</a> is passed as 0 . The transport receive for CONNACK will be retried MQTT_MAX_CONNACK_RECEIVE_RETRY_COUNT times before timing out. A value of 0 for this config will cause the transport receive for CONNACK to be invoked only once.</p>
 <p><b>Possible values:</b> Any positive 16 bit integer. <br  />
  <b>Default value:</b> <code>5</code> </p>
 
@@ -380,6 +383,29 @@ If a dummy implementation of the <a class="el" href="group__mqtt__callback__type
 <p>To enable debug level logging from MQTT library, this macro should be mapped to the application-specific logging implementation that supports debug logging.</p>
 <dl class="section note"><dt>Note</dt><dd>This logging macro is called in the MQTT library with parameters wrapped in double parentheses to be ISO C89/C90 standard compliant. For a reference POSIX implementation of the logging macros, refer to core_mqtt_config.h files, and the logging-stack in demos folder of the <a href="https://github.com/aws/aws-iot-device-sdk-embedded-C/">AWS IoT Embedded C SDK repository</a>.</dd></dl>
 <p><b>Default value</b>: Debug logging is turned off, and no code is generated for calls to the macro in the MQTT library on compilation. </p>
+
+</div>
+</div>
+<a id="a5746dc4ea5f49e1a35ec2c1076dd1913" name="a5746dc4ea5f49e1a35ec2c1076dd1913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5746dc4ea5f49e1a35ec2c1076dd1913">&#9670;&#160;</a></span>LogTrace</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LogTrace</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">message</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro that is called in the MQTT library for logging "Trace" level messages. </p>
+<p>To enable trace level logging from MQTT library, this macro should be mapped to the application-specific logging implementation that supports trace logging.</p>
+<dl class="section note"><dt>Note</dt><dd>This logging macro is called in the MQTT library with parameters wrapped in double parentheses to be ISO C89/C90 standard compliant. For a reference POSIX implementation of the logging macros, refer to core_mqtt_config.h files, and the logging-stack in demos folder of the <a href="https://github.com/aws/aws-iot-device-sdk-embedded-C/">AWS IoT Embedded C SDK repository</a>.</dd></dl>
+<p><b>Default value</b>: Trace logging is turned off, and no code is generated for calls to the macro in the MQTT library on compilation. </p>
 
 </div>
 </div>

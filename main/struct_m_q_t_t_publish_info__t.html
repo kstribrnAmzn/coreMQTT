@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -126,10 +126,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>dup</b></td></tr>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>pTopicName</b></td></tr>
 <tr class="memdesc:aa80e8ca282d01630f878ad0afe81d7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Topic name on which the message is published. <br /></td></tr>
 <tr class="separator:aa80e8ca282d01630f878ad0afe81d7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6161c792d20cc7cf8284c1b71ea1145f"><td class="memItemLeft" align="right" valign="top"><a id="a6161c792d20cc7cf8284c1b71ea1145f" name="a6161c792d20cc7cf8284c1b71ea1145f"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>topicNameLength</b></td></tr>
-<tr class="memdesc:a6161c792d20cc7cf8284c1b71ea1145f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of topic name. <br /></td></tr>
-<tr class="separator:a6161c792d20cc7cf8284c1b71ea1145f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a865573b203c848cc28cdf955b7028629"><td class="memItemLeft" align="right" valign="top"><a id="a865573b203c848cc28cdf955b7028629" name="a865573b203c848cc28cdf955b7028629"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>topicNameLength</b></td></tr>
+<tr class="memdesc:a865573b203c848cc28cdf955b7028629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of topic name. <br /></td></tr>
+<tr class="separator:a865573b203c848cc28cdf955b7028629"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc28299f4f625f5e674bb61b42f03380"><td class="memItemLeft" align="right" valign="top"><a id="afc28299f4f625f5e674bb61b42f03380" name="afc28299f4f625f5e674bb61b42f03380"></a>
 const void *&#160;</td><td class="memItemRight" valign="bottom"><b>pPayload</b></td></tr>
 <tr class="memdesc:afc28299f4f625f5e674bb61b42f03380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message payload. <br /></td></tr>
@@ -138,6 +138,10 @@ const void *&#160;</td><td class="memItemRight" valign="bottom"><b>pPayload</b><
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>payloadLength</b></td></tr>
 <tr class="memdesc:a7997964e11571f35f0c3b729db0f760f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message payload length. <br /></td></tr>
 <tr class="separator:a7997964e11571f35f0c3b729db0f760f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf01d089ad9db1b041015715071942f9"><td class="memItemLeft" align="right" valign="top"><a id="aaf01d089ad9db1b041015715071942f9" name="aaf01d089ad9db1b041015715071942f9"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>propertyLength</b></td></tr>
+<tr class="memdesc:aaf01d089ad9db1b041015715071942f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the properties. <br /></td></tr>
+<tr class="separator:aaf01d089ad9db1b041015715071942f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>MQTT PUBLISH packet parameters. </p>

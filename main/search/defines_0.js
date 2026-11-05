@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['core_5fmqtt_5fserialized_5flength_5ffield_5fbytes_0',['CORE_MQTT_SERIALIZED_LENGTH_FIELD_BYTES',['../core__mqtt_8c.html#a989426922a1f5f04ea8b612fd1f4b185',1,'core_mqtt.c']]],
-  ['core_5fmqtt_5fsubscribe_5fper_5ftopic_5fvector_5flength_1',['CORE_MQTT_SUBSCRIBE_PER_TOPIC_VECTOR_LENGTH',['../core__mqtt_8c.html#a97f180c9cc32ca9e354e7c22378a386b',1,'core_mqtt.c']]],
-  ['core_5fmqtt_5funsubscribe_5fper_5ftopic_5fvector_5flength_2',['CORE_MQTT_UNSUBSCRIBE_PER_TOPIC_VECTOR_LENGTH',['../core__mqtt_8c.html#a42477ec456354f2b944b47646ee5a9ce',1,'core_mqtt.c']]]
+  ['addition_5fwill_5foverflow_5fsize_5ft_0',['ADDITION_WILL_OVERFLOW_SIZE_T',['../core__mqtt__serializer__private_8h.html#ae9f065fa00c12023ad2b8916fa4d5153',1,'core_mqtt_serializer_private.h']]],
+  ['addition_5fwill_5foverflow_5fu32_1',['ADDITION_WILL_OVERFLOW_U32',['../core__mqtt__serializer__private_8h.html#af9dc8d18062c5d202def971e7ea7fde8',1,'core_mqtt_serializer_private.h']]]
 ];

@@ -47,6 +47,7 @@ var NAVTREE =
       [ "LogDebug", "core_mqtt_config.html#mqtt_logdebug", null ]
     ] ],
     [ "Functions", "mqtt_functions.html", "mqtt_functions" ],
+    [ "MQTTPropGet_ServerRef", "mqttpropget_disconnectserverref_function.html", null ],
     [ "Porting Guide", "mqtt_porting.html", [
       [ "Configuration Macros", "mqtt_porting.html#mqtt_porting_config", null ],
       [ "Transport Interface", "mqtt_porting.html#mqtt_porting_transport", null ],
@@ -71,7 +72,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"core_mqtt_config.html"
+"_m_q_t_t_prop_get_contenttype_function.html",
+"mqtt_primaryfunctions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

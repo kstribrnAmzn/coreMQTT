@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -100,19 +100,61 @@ $(document).ready(function(){initNavTree('mqtt_disconnect_function.html',''); in
   <div class="headertitle"><div class="title">MQTT_Disconnect </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="fragment"><div class="line"><a class="code hl_enumeration" href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a> <a class="code hl_function" href="core__mqtt_8h.html#ac79c366acbc3dddd88072d99ccb9140c">MQTT_Disconnect</a>( <a class="code hl_struct" href="struct_m_q_t_t_context__t.html">MQTTContext_t</a> * pContext );</div>
-<div class="ttc" id="acore__mqtt_8h_html_ac79c366acbc3dddd88072d99ccb9140c"><div class="ttname"><a href="core__mqtt_8h.html#ac79c366acbc3dddd88072d99ccb9140c">MQTT_Disconnect</a></div><div class="ttdeci">MQTTStatus_t MQTT_Disconnect(MQTTContext_t *pContext)</div><div class="ttdoc">Disconnect an MQTT session.</div><div class="ttdef"><b>Definition:</b> core_mqtt.c:3045</div></div>
-<div class="ttc" id="agroup__mqtt__enum__types_html_gaba7ec045874a1c3432f99173367f735c"><div class="ttname"><a href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a></div><div class="ttdeci">MQTTStatus_t</div><div class="ttdoc">Return codes from MQTT functions.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:87</div></div>
-<div class="ttc" id="astruct_m_q_t_t_context__t_html"><div class="ttname"><a href="struct_m_q_t_t_context__t.html">MQTTContext_t</a></div><div class="ttdoc">A struct representing an MQTT connection.</div><div class="ttdef"><b>Definition:</b> core_mqtt.h:170</div></div>
-</div><!-- fragment --><p>Disconnect an MQTT session.  </p>
+<div class="textblock"><div class="fragment"><div class="line"><a class="code hl_enumeration" href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a> <a class="code hl_function" href="core__mqtt_8h.html#a8c15c0b8701e253183e24b8d0d2ca104">MQTT_Disconnect</a>( <a class="code hl_struct" href="struct_m_q_t_t_context__t.html">MQTTContext_t</a> * pContext,</div>
+<div class="line">                              <span class="keyword">const</span> <a class="code hl_struct" href="struct_m_q_t_t_prop_builder__t.html">MQTTPropBuilder_t</a> * pPropertyBuilder,</div>
+<div class="line">                              <span class="keyword">const</span> <a class="code hl_enumeration" href="group__mqtt__enum__types.html#ga377edfeeb661cf054a3c7c598637450e">MQTTSuccessFailReasonCode_t</a> * pReasonCode );</div>
+<div class="ttc" id="acore__mqtt_8h_html_a8c15c0b8701e253183e24b8d0d2ca104"><div class="ttname"><a href="core__mqtt_8h.html#a8c15c0b8701e253183e24b8d0d2ca104">MQTT_Disconnect</a></div><div class="ttdeci">MQTTStatus_t MQTT_Disconnect(MQTTContext_t *pContext, const MQTTPropBuilder_t *pPropertyBuilder, const MQTTSuccessFailReasonCode_t *pReasonCode)</div><div class="ttdoc">Sends MQTT DISCONNECT for a given reason code.</div><div class="ttdef"><b>Definition:</b> core_mqtt.c:5057</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_ga377edfeeb661cf054a3c7c598637450e"><div class="ttname"><a href="group__mqtt__enum__types.html#ga377edfeeb661cf054a3c7c598637450e">MQTTSuccessFailReasonCode_t</a></div><div class="ttdeci">MQTTSuccessFailReasonCode_t</div><div class="ttdoc">MQTT reason codes.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:652</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gaba7ec045874a1c3432f99173367f735c"><div class="ttname"><a href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a></div><div class="ttdeci">MQTTStatus_t</div><div class="ttdoc">Return codes from MQTT functions.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:308</div></div>
+<div class="ttc" id="astruct_m_q_t_t_context__t_html"><div class="ttname"><a href="struct_m_q_t_t_context__t.html">MQTTContext_t</a></div><div class="ttdoc">A struct representing an MQTT connection.</div><div class="ttdef"><b>Definition:</b> core_mqtt.h:307</div></div>
+<div class="ttc" id="astruct_m_q_t_t_prop_builder__t_html"><div class="ttname"><a href="struct_m_q_t_t_prop_builder__t.html">MQTTPropBuilder_t</a></div><div class="ttdoc">Property builder for MQTT packets.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:539</div></div>
+</div><!-- fragment --><p>Sends MQTT DISCONNECT for a given reason code.  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pContext</td><td>Initialized and connected MQTT context.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pContext</td><td>Initialized and connected MQTT context. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pPropertyBuilder</td><td>Properties to be sent in the outgoing packet. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pReasonCode</td><td>Optional reason code to be sent in the DISCONNECT packet. If NULL, then no reason code is sent.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735cab1be4db832a0468f024243bca151a8df">MQTTNoMemory</a> if the <a class="el" href="struct_m_q_t_t_context__t.html#a231c5576a6ce389317a3f00f95628276" title="The buffer used in sending and receiving packets from the network.">MQTTContext_t.networkBuffer</a> is too small to hold the MQTT packet; <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735caa39030c93b0263b2699502a074f003b5">MQTTBadParameter</a> if invalid parameters are passed; <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735cafd06b63fe9677fa2af06b0f4c7d4ad55">MQTTSendFailed</a> if transport send failed; <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a> otherwise.   </dd></dl>
-</div></div><!-- contents -->
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735caa39030c93b0263b2699502a074f003b5">MQTTBadParameter</a> if invalid parameters are passed;<br  />
+ <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735caa5d7507e7664a14d63a8bc44b280093e">MQTTBadResponse</a> if invalid properties are parsed;<br  />
+ <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735cafd06b63fe9677fa2af06b0f4c7d4ad55">MQTTSendFailed</a> if transport send failed;<br  />
+ <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca074273b04f70b93c1f20702096cac273">MQTTStatusNotConnected</a> if the connection is not established yet.<br  />
+ <a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a> otherwise.<br  />
+</dd></dl>
+<p>Functions to add optional properties to the DISCONNECT packet are:</p>
+<ul>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a68a57b8974bb9123001d7048b3b542af" title="Adds Session Expiry Interval property to the MQTT property builder.">MQTTPropAdd_SessionExpiry</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a67b568e5dd77d4bbab897d2cd61e4699" title="Adds Reason String property to the MQTT property builder.">MQTTPropAdd_ReasonString</a></li>
+<li><a class="el" href="core__mqtt__serializer_8h.html#a942a44cc446e7a1aa1d177947f336aa0" title="Adds User Property to the MQTT property builder.">MQTTPropAdd_UserProp</a></li>
+</ul>
+<p><b>Example</b> </p><div class="fragment"><div class="line"><span class="comment">// Variables used in this example.</span></div>
+<div class="line"><a class="code hl_enumeration" href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a> status;</div>
+<div class="line"><span class="comment">// This context is assumed to be initialized and connected.</span></div>
+<div class="line"><a class="code hl_struct" href="struct_m_q_t_t_context__t.html">MQTTContext_t</a> * pContext;</div>
+<div class="line"><span class="comment">// Optional properties to be sent in the DISCONNECT packet.</span></div>
+<div class="line"><a class="code hl_struct" href="struct_m_q_t_t_prop_builder__t.html">MQTTPropBuilder_t</a> propertyBuilder;</div>
+<div class="line">uint8_t propertyBuffer[ 100 ];</div>
+<div class="line"><span class="keywordtype">size_t</span> propertyBufferLength = <span class="keyword">sizeof</span>( propertyBuffer );</div>
+<div class="line">status = <a class="code hl_function" href="core__mqtt__serializer_8h.html#a1f298e44147e62b8a4cbf735fa4fde57">MQTTPropertyBuilder_Init</a>( &amp;propertyBuilder, propertyBuffer, propertyBufferLength );</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Set a property in the propertyBuilder</span></div>
+<div class="line">status = <a class="code hl_function" href="core__mqtt__serializer_8h.html#a67b568e5dd77d4bbab897d2cd61e4699">MQTTPropAdd_ReasonString</a>( &amp;propertyBuilder, <span class="stringliteral">&quot;Disconnecting&quot;</span>, 13, <a class="code hl_define" href="group__mqtt__constants.html#ga7028680383cf0b6bb0c8beecd977e9c8">MQTT_PROP_VALIDATE_DISCONNECT</a>);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_enumeration" href="group__mqtt__enum__types.html#ga377edfeeb661cf054a3c7c598637450e">MQTTSuccessFailReasonCode_t</a> reason = <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450ea55edb84a47cdda9f150a12bfd2e38db1">MQTT_REASON_DISCONNECT_NORMAL_DISCONNECTION</a>;</div>
+<div class="line">status = <a class="code hl_function" href="core__mqtt_8h.html#a8c15c0b8701e253183e24b8d0d2ca104">MQTT_Disconnect</a>( pContext, &amp;propertyBuilder, &amp;reason );</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span>( status == <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a> )</div>
+<div class="line">{</div>
+<div class="line">     <span class="comment">// The DISCONNECT packet was sent successfully. The connection is now closed.</span></div>
+<div class="line">}</div>
+<div class="ttc" id="acore__mqtt__serializer_8h_html_a1f298e44147e62b8a4cbf735fa4fde57"><div class="ttname"><a href="core__mqtt__serializer_8h.html#a1f298e44147e62b8a4cbf735fa4fde57">MQTTPropertyBuilder_Init</a></div><div class="ttdeci">MQTTStatus_t MQTTPropertyBuilder_Init(MQTTPropBuilder_t *pPropertyBuilder, uint8_t *buffer, size_t length)</div><div class="ttdoc">Initialize the property builder.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.c:5044</div></div>
+<div class="ttc" id="acore__mqtt__serializer_8h_html_a67b568e5dd77d4bbab897d2cd61e4699"><div class="ttname"><a href="core__mqtt__serializer_8h.html#a67b568e5dd77d4bbab897d2cd61e4699">MQTTPropAdd_ReasonString</a></div><div class="ttdeci">MQTTStatus_t MQTTPropAdd_ReasonString(MQTTPropBuilder_t *pPropertyBuilder, const char *pReasonString, size_t reasonStringLength, const uint8_t *pOptionalMqttPacketType)</div><div class="ttdoc">Adds Reason String property to the MQTT property builder.</div><div class="ttdef"><b>Definition:</b> core_mqtt_prop_serializer.c:1154</div></div>
+<div class="ttc" id="agroup__mqtt__constants_html_ga7028680383cf0b6bb0c8beecd977e9c8"><div class="ttname"><a href="group__mqtt__constants.html#ga7028680383cf0b6bb0c8beecd977e9c8">MQTT_PROP_VALIDATE_DISCONNECT</a></div><div class="ttdeci">#define MQTT_PROP_VALIDATE_DISCONNECT</div><div class="ttdoc">Validate property for DISCONNECT.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:134</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gga377edfeeb661cf054a3c7c598637450ea55edb84a47cdda9f150a12bfd2e38db1"><div class="ttname"><a href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450ea55edb84a47cdda9f150a12bfd2e38db1">MQTT_REASON_DISCONNECT_NORMAL_DISCONNECTION</a></div><div class="ttdeci">@ MQTT_REASON_DISCONNECT_NORMAL_DISCONNECTION</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:731</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056"><div class="ttname"><a href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a></div><div class="ttdeci">@ MQTTSuccess</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:309</div></div>
+</div><!-- fragment -->   </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -31,9 +31,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v2.2.0</span>
+   <div id="projectname">coreMQTT<span id="projectnumber">&#160;v5.0.2</span>
    </div>
-   <div id="projectbrief">MQTT 3.1.1 Client Library</div>
+   <div id="projectbrief">MQTT 5.0 Client Library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -103,16 +103,25 @@ $(document).ready(function(){initNavTree('mqtt_getsubackstatuscodes_function.htm
 <div class="textblock"><div class="fragment"><div class="line"><a class="code hl_enumeration" href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a> <a class="code hl_function" href="core__mqtt_8h.html#ac43449e06856c6703cda73359c222bd2">MQTT_GetSubAckStatusCodes</a>( <span class="keyword">const</span> <a class="code hl_struct" href="struct_m_q_t_t_packet_info__t.html">MQTTPacketInfo_t</a> * pSubackPacket,</div>
 <div class="line">                                        uint8_t ** pPayloadStart,</div>
 <div class="line">                                        <span class="keywordtype">size_t</span> * pPayloadSize );</div>
-<div class="ttc" id="acore__mqtt_8h_html_ac43449e06856c6703cda73359c222bd2"><div class="ttname"><a href="core__mqtt_8h.html#ac43449e06856c6703cda73359c222bd2">MQTT_GetSubAckStatusCodes</a></div><div class="ttdeci">MQTTStatus_t MQTT_GetSubAckStatusCodes(const MQTTPacketInfo_t *pSubackPacket, uint8_t **pPayloadStart, size_t *pPayloadSize)</div><div class="ttdoc">Parses the payload of an MQTT SUBACK packet that contains status codes corresponding to topic filter ...</div><div class="ttdef"><b>Definition:</b> core_mqtt.c:3270</div></div>
-<div class="ttc" id="agroup__mqtt__enum__types_html_gaba7ec045874a1c3432f99173367f735c"><div class="ttname"><a href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a></div><div class="ttdeci">MQTTStatus_t</div><div class="ttdoc">Return codes from MQTT functions.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:87</div></div>
-<div class="ttc" id="astruct_m_q_t_t_packet_info__t_html"><div class="ttname"><a href="struct_m_q_t_t_packet_info__t.html">MQTTPacketInfo_t</a></div><div class="ttdoc">MQTT incoming packet parameters.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:244</div></div>
+<div class="ttc" id="acore__mqtt_8h_html_ac43449e06856c6703cda73359c222bd2"><div class="ttname"><a href="core__mqtt_8h.html#ac43449e06856c6703cda73359c222bd2">MQTT_GetSubAckStatusCodes</a></div><div class="ttdeci">MQTTStatus_t MQTT_GetSubAckStatusCodes(const MQTTPacketInfo_t *pSubackPacket, uint8_t **pPayloadStart, size_t *pPayloadSize)</div><div class="ttdoc">Parses the payload of an MQTT SUBACK packet that contains status codes corresponding to topic filter ...</div><div class="ttdef"><b>Definition:</b> core_mqtt.c:5298</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gaba7ec045874a1c3432f99173367f735c"><div class="ttname"><a href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a></div><div class="ttdeci">MQTTStatus_t</div><div class="ttdoc">Return codes from MQTT functions.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:308</div></div>
+<div class="ttc" id="astruct_m_q_t_t_packet_info__t_html"><div class="ttname"><a href="struct_m_q_t_t_packet_info__t.html">MQTTPacketInfo_t</a></div><div class="ttdoc">MQTT incoming packet parameters.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:512</div></div>
 </div><!-- fragment --><p>Parses the payload of an MQTT SUBACK packet that contains status codes corresponding to topic filter subscription requests from the original subscribe packet.  </p>
 <p>Each return code in the SUBACK packet corresponds to a topic filter in the SUBSCRIBE Packet being acknowledged. The status codes can be one of the following:</p><ul>
 <li>0x00 - Success - Maximum QoS 0</li>
 <li>0x01 - Success - Maximum QoS 1</li>
-<li>0x02 - Success - Maximum QoS 2</li>
-<li>0x80 - Failure Refer to <a class="el" href="group__mqtt__enum__types.html#ga48dabc1579e3c0ac6058ce9068054611" title="The status codes in the SUBACK response to a subscription request.">MQTTSubAckStatus_t</a> for the status codes.</li>
+<li>0x02 - Success - Maximum QoS 2 These are the reason codes when the server refuses the request-</li>
+<li>0x80 - Topic Filter Refused</li>
+<li>0x83 - Implementation specific error.</li>
+<li>0x87 - Not authorized.</li>
+<li>0x8F - Invalid Topic Filter.</li>
+<li>0x91 - Packet identifier in use.</li>
+<li>0x97 - Quota exceeded.</li>
+<li>0x9E - Shared subscriptions not supported.</li>
+<li>0xA1 - Subscription identifiers not supported.</li>
+<li>0xA2 - Wildcard subscriptions not supported.</li>
 </ul>
+<p>The payload is an array of raw reason-code bytes, one per topic filter. Symbolic names for all of the codes listed above are provided by the <code>MQTT_REASON_SUBACK_*</code> members of <a class="el" href="group__mqtt__enum__types.html#ga377edfeeb661cf054a3c7c598637450e" title="MQTT reason codes.">MQTTSuccessFailReasonCode_t</a>, which can be used to interpret each byte (see the example below).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pSubackPacket</td><td>The SUBACK packet whose payload is to be parsed. </td></tr>
@@ -122,8 +131,12 @@ $(document).ready(function(){initNavTree('mqtt_getsubackstatuscodes_function.htm
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns one of the following:<ul>
-<li><a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735caa39030c93b0263b2699502a074f003b5">MQTTBadParameter</a> if the input SUBACK packet is invalid.</li>
-<li><a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a> if parsing the payload was successful.</li>
+<li><a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735caa39030c93b0263b2699502a074f003b5">MQTTBadParameter</a> if the input SUBACK packet is invalid.<br  />
+</li>
+<li><a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735caa5d7507e7664a14d63a8bc44b280093e">MQTTBadResponse</a> if the SUBACK property length is malformed.<br  />
+</li>
+<li><a class="el" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a> if parsing the payload was successful.<br  />
+</li>
 </ul>
 </dd></dl>
 <p><b>Example</b> </p><div class="fragment"><div class="line"><span class="comment">// Global variable used in this example.</span></div>
@@ -132,10 +145,13 @@ $(document).ready(function(){initNavTree('mqtt_getsubackstatuscodes_function.htm
 <div class="line"> </div>
 <div class="line"><span class="comment">// MQTT_GetSubAckStatusCodes is intended to be used from the application</span></div>
 <div class="line"><span class="comment">// callback that is called by the library in MQTT_ProcessLoop or MQTT_ReceiveLoop.</span></div>
-<div class="line"><span class="keywordtype">void</span> eventCallback(</div>
+<div class="line"><span class="keywordtype">bool</span> eventCallback(</div>
 <div class="line">     <a class="code hl_struct" href="struct_m_q_t_t_context__t.html">MQTTContext_t</a> * pContext,</div>
 <div class="line">     <a class="code hl_struct" href="struct_m_q_t_t_packet_info__t.html">MQTTPacketInfo_t</a> * pPacketInfo,</div>
-<div class="line">     <a class="code hl_struct" href="struct_m_q_t_t_deserialized_info__t.html">MQTTDeserializedInfo_t</a> * pDeserializedInfo</div>
+<div class="line">     <a class="code hl_struct" href="struct_m_q_t_t_deserialized_info__t.html">MQTTDeserializedInfo_t</a> * pDeserializedInfo,</div>
+<div class="line">     <a class="code hl_enumeration" href="group__mqtt__enum__types.html#ga377edfeeb661cf054a3c7c598637450e">MQTTSuccessFailReasonCode_t</a> * pReasonCode,</div>
+<div class="line">     <a class="code hl_struct" href="struct_m_q_t_t_prop_builder__t.html">MQTTPropBuilder_t</a> * pSendPropsBuffer,</div>
+<div class="line">     <a class="code hl_struct" href="struct_m_q_t_t_prop_builder__t.html">MQTTPropBuilder_t</a> * pGetPropsBuffer</div>
 <div class="line">)</div>
 <div class="line">{</div>
 <div class="line">     <a class="code hl_enumeration" href="group__mqtt__enum__types.html#gaba7ec045874a1c3432f99173367f735c">MQTTStatus_t</a> status = <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a>;</div>
@@ -154,25 +170,33 @@ $(document).ready(function(){initNavTree('mqtt_getsubackstatuscodes_function.htm
 <div class="line">         <span class="comment">// original SUBSCRIBE packet.</span></div>
 <div class="line">         assert( numCodes == NUMBER_OF_SUBSCRIPTIONS );</div>
 <div class="line"> </div>
-<div class="line">         <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0; i &lt; numCodes; i++ )</div>
+<div class="line">         <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i = 0; i &lt; numCodes; i++ )</div>
 <div class="line">         {</div>
-<div class="line">             <span class="comment">// The only failure code is 0x80 = MQTTSubAckFailure.</span></div>
-<div class="line">             <span class="keywordflow">if</span>( pCodes[ i ] == <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#gga48dabc1579e3c0ac6058ce9068054611aeb83b20da8eda934cde6b92db225a808">MQTTSubAckFailure</a> )</div>
+<div class="line">             <span class="keywordflow">switch</span>( pCodes[ i ] )</div>
 <div class="line">             {</div>
-<div class="line">                 <span class="comment">// The subscription failed, we may want to retry the</span></div>
-<div class="line">                 <span class="comment">// subscription in pSubscribes[ i ] outside of this callback.</span></div>
-<div class="line">             }</div>
-<div class="line">             <span class="keywordflow">else</span></div>
-<div class="line">             {</div>
-<div class="line">                 <span class="comment">// The subscription was granted, but the maximum QoS may be</span></div>
-<div class="line">                 <span class="comment">// lower than what was requested. We can verify the granted QoS.</span></div>
-<div class="line">                 <span class="keywordflow">if</span>( pSubscribes[ i ].qos != pCodes[ i ] )</div>
-<div class="line">                 {</div>
-<div class="line">                     <a class="code hl_define" href="core__mqtt__config__defaults_8h.html#a7da92048aaf0cbfcacde9539c98a0e05">LogWarn</a>( (</div>
-<div class="line">                         <span class="stringliteral">&quot;Requested QoS %u, but granted QoS %u for %s&quot;</span>,</div>
-<div class="line">                         pSubscribes[ i ].qos, pCodes[ i ], pSubscribes[ i ].pTopicFilter</div>
-<div class="line">                     ) );</div>
-<div class="line">                 }</div>
+<div class="line">                 <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450ea691755049d5fc3165296ac233d907a4d">MQTT_REASON_SUBACK_GRANTED_QOS0</a>:</div>
+<div class="line">                 <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450eaaef376fb954f8b54ff99d86cb4d50c11">MQTT_REASON_SUBACK_GRANTED_QOS1</a>:</div>
+<div class="line">                 <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450eae2263fb8bdb2b367a55baebd4d90a1a6">MQTT_REASON_SUBACK_GRANTED_QOS2</a>:</div>
+<div class="line">                     <span class="comment">// The subscription was granted, but the maximum QoS may be</span></div>
+<div class="line">                     <span class="comment">// lower than what was requested. The reason code is the</span></div>
+<div class="line">                     <span class="comment">// granted maximum QoS.</span></div>
+<div class="line">                     <span class="keywordflow">if</span>( pSubscribes[ i ].qos != pCodes[ i ] )</div>
+<div class="line">                     {</div>
+<div class="line">                         <a class="code hl_define" href="core__mqtt__config__defaults_8h.html#a7da92048aaf0cbfcacde9539c98a0e05">LogWarn</a>( (</div>
+<div class="line">                             <span class="stringliteral">&quot;Requested QoS %u, but granted QoS %u for %s&quot;</span>,</div>
+<div class="line">                             pSubscribes[ i ].qos, pCodes[ i ], pSubscribes[ i ].pTopicFilter</div>
+<div class="line">                         ) );</div>
+<div class="line">                     }</div>
+<div class="line">                     <span class="keywordflow">break</span>;</div>
+<div class="line"> </div>
+<div class="line">                 <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450ea823864d4817117a7b918c759d96f53bd">MQTT_REASON_SUBACK_NOT_AUTHORIZED</a>:</div>
+<div class="line">                 <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450ea59a194884e3e1abccd33c2aaa11d8378">MQTT_REASON_SUBACK_TOPIC_FILTER_INVALID</a>:</div>
+<div class="line">                 <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450eaaeef90d33af2613da0a0967982ad9053">MQTT_REASON_SUBACK_QUOTA_EXCEEDED</a>:</div>
+<div class="line">                 <span class="keywordflow">default</span>:</div>
+<div class="line">                     <span class="comment">// The subscription for pSubscribes[ i ] was refused. The</span></div>
+<div class="line">                     <span class="comment">// specific MQTT_REASON_SUBACK_* code indicates why; the</span></div>
+<div class="line">                     <span class="comment">// subscription may be retried outside of this callback.</span></div>
+<div class="line">                     <span class="keywordflow">break</span>;</div>
 <div class="line">             }</div>
 <div class="line">         }</div>
 <div class="line">     }</div>
@@ -180,12 +204,19 @@ $(document).ready(function(){initNavTree('mqtt_getsubackstatuscodes_function.htm
 <div class="line">}</div>
 <div class="ttc" id="acore__mqtt__config__defaults_8h_html_a7da92048aaf0cbfcacde9539c98a0e05"><div class="ttname"><a href="core__mqtt__config__defaults_8h.html#a7da92048aaf0cbfcacde9539c98a0e05">LogWarn</a></div><div class="ttdeci">#define LogWarn(message)</div><div class="ttdoc">Macro that is called in the MQTT library for logging &quot;Warning&quot; level messages.</div><div class="ttdef"><b>Definition:</b> core_mqtt_config_defaults.h:235</div></div>
 <div class="ttc" id="agroup__mqtt__constants_html_ga307e0186aa17fdd0d6d181d3d2715766"><div class="ttname"><a href="group__mqtt__constants.html#ga307e0186aa17fdd0d6d181d3d2715766">MQTT_PACKET_TYPE_SUBACK</a></div><div class="ttdeci">#define MQTT_PACKET_TYPE_SUBACK</div><div class="ttdoc">SUBACK (server-to-client).</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:61</div></div>
-<div class="ttc" id="agroup__mqtt__enum__types_html_gga48dabc1579e3c0ac6058ce9068054611aeb83b20da8eda934cde6b92db225a808"><div class="ttname"><a href="group__mqtt__enum__types.html#gga48dabc1579e3c0ac6058ce9068054611aeb83b20da8eda934cde6b92db225a808">MQTTSubAckFailure</a></div><div class="ttdeci">@ MQTTSubAckFailure</div><div class="ttdoc">Failure.</div><div class="ttdef"><b>Definition:</b> core_mqtt.h:151</div></div>
-<div class="ttc" id="agroup__mqtt__enum__types_html_ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056"><div class="ttname"><a href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a></div><div class="ttdeci">@ MQTTSuccess</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:88</div></div>
-<div class="ttc" id="astruct_m_q_t_t_context__t_html"><div class="ttname"><a href="struct_m_q_t_t_context__t.html">MQTTContext_t</a></div><div class="ttdoc">A struct representing an MQTT connection.</div><div class="ttdef"><b>Definition:</b> core_mqtt.h:170</div></div>
-<div class="ttc" id="astruct_m_q_t_t_deserialized_info__t_html"><div class="ttname"><a href="struct_m_q_t_t_deserialized_info__t.html">MQTTDeserializedInfo_t</a></div><div class="ttdoc">Struct to hold deserialized packet information for an MQTTEventCallback_t callback.</div><div class="ttdef"><b>Definition:</b> core_mqtt.h:254</div></div>
-<div class="ttc" id="astruct_m_q_t_t_packet_info__t_html_a7fef40548c1aa0f0e7f812a6a7243758"><div class="ttname"><a href="struct_m_q_t_t_packet_info__t.html#a7fef40548c1aa0f0e7f812a6a7243758">MQTTPacketInfo_t::type</a></div><div class="ttdeci">uint8_t type</div><div class="ttdoc">Type of incoming MQTT packet.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:248</div></div>
-<div class="ttc" id="astruct_m_q_t_t_subscribe_info__t_html"><div class="ttname"><a href="struct_m_q_t_t_subscribe_info__t.html">MQTTSubscribeInfo_t</a></div><div class="ttdoc">MQTT SUBSCRIBE packet parameters.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:180</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_ga377edfeeb661cf054a3c7c598637450e"><div class="ttname"><a href="group__mqtt__enum__types.html#ga377edfeeb661cf054a3c7c598637450e">MQTTSuccessFailReasonCode_t</a></div><div class="ttdeci">MQTTSuccessFailReasonCode_t</div><div class="ttdoc">MQTT reason codes.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:652</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gga377edfeeb661cf054a3c7c598637450ea59a194884e3e1abccd33c2aaa11d8378"><div class="ttname"><a href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450ea59a194884e3e1abccd33c2aaa11d8378">MQTT_REASON_SUBACK_TOPIC_FILTER_INVALID</a></div><div class="ttdeci">@ MQTT_REASON_SUBACK_TOPIC_FILTER_INVALID</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:714</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gga377edfeeb661cf054a3c7c598637450ea691755049d5fc3165296ac233d907a4d"><div class="ttname"><a href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450ea691755049d5fc3165296ac233d907a4d">MQTT_REASON_SUBACK_GRANTED_QOS0</a></div><div class="ttdeci">@ MQTT_REASON_SUBACK_GRANTED_QOS0</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:708</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gga377edfeeb661cf054a3c7c598637450ea823864d4817117a7b918c759d96f53bd"><div class="ttname"><a href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450ea823864d4817117a7b918c759d96f53bd">MQTT_REASON_SUBACK_NOT_AUTHORIZED</a></div><div class="ttdeci">@ MQTT_REASON_SUBACK_NOT_AUTHORIZED</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:713</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gga377edfeeb661cf054a3c7c598637450eaaeef90d33af2613da0a0967982ad9053"><div class="ttname"><a href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450eaaeef90d33af2613da0a0967982ad9053">MQTT_REASON_SUBACK_QUOTA_EXCEEDED</a></div><div class="ttdeci">@ MQTT_REASON_SUBACK_QUOTA_EXCEEDED</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:716</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gga377edfeeb661cf054a3c7c598637450eaaef376fb954f8b54ff99d86cb4d50c11"><div class="ttname"><a href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450eaaef376fb954f8b54ff99d86cb4d50c11">MQTT_REASON_SUBACK_GRANTED_QOS1</a></div><div class="ttdeci">@ MQTT_REASON_SUBACK_GRANTED_QOS1</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:709</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_gga377edfeeb661cf054a3c7c598637450eae2263fb8bdb2b367a55baebd4d90a1a6"><div class="ttname"><a href="group__mqtt__enum__types.html#gga377edfeeb661cf054a3c7c598637450eae2263fb8bdb2b367a55baebd4d90a1a6">MQTT_REASON_SUBACK_GRANTED_QOS2</a></div><div class="ttdeci">@ MQTT_REASON_SUBACK_GRANTED_QOS2</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:710</div></div>
+<div class="ttc" id="agroup__mqtt__enum__types_html_ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056"><div class="ttname"><a href="group__mqtt__enum__types.html#ggaba7ec045874a1c3432f99173367f735ca484e062cb4f3fccc1858dd25cfeee056">MQTTSuccess</a></div><div class="ttdeci">@ MQTTSuccess</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:309</div></div>
+<div class="ttc" id="astruct_m_q_t_t_context__t_html"><div class="ttname"><a href="struct_m_q_t_t_context__t.html">MQTTContext_t</a></div><div class="ttdoc">A struct representing an MQTT connection.</div><div class="ttdef"><b>Definition:</b> core_mqtt.h:307</div></div>
+<div class="ttc" id="astruct_m_q_t_t_deserialized_info__t_html"><div class="ttname"><a href="struct_m_q_t_t_deserialized_info__t.html">MQTTDeserializedInfo_t</a></div><div class="ttdoc">Struct to hold deserialized packet information for an MQTTEventCallback_t callback.</div><div class="ttdef"><b>Definition:</b> core_mqtt.h:438</div></div>
+<div class="ttc" id="astruct_m_q_t_t_packet_info__t_html_a7fef40548c1aa0f0e7f812a6a7243758"><div class="ttname"><a href="struct_m_q_t_t_packet_info__t.html#a7fef40548c1aa0f0e7f812a6a7243758">MQTTPacketInfo_t::type</a></div><div class="ttdeci">uint8_t type</div><div class="ttdoc">Type of incoming MQTT packet.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:516</div></div>
+<div class="ttc" id="astruct_m_q_t_t_prop_builder__t_html"><div class="ttname"><a href="struct_m_q_t_t_prop_builder__t.html">MQTTPropBuilder_t</a></div><div class="ttdoc">Property builder for MQTT packets.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:539</div></div>
+<div class="ttc" id="astruct_m_q_t_t_subscribe_info__t_html"><div class="ttname"><a href="struct_m_q_t_t_subscribe_info__t.html">MQTTSubscribeInfo_t</a></div><div class="ttdoc">MQTT SUBSCRIBE packet parameters.</div><div class="ttdef"><b>Definition:</b> core_mqtt_serializer.h:420</div></div>
 </div><!-- fragment -->   </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

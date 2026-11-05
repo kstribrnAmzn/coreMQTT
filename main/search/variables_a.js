@@ -1,19 +1,11 @@
 var searchData=
 [
-  ['packetid_0',['packetId',['../struct_m_q_t_t_pub_ack_info__t.html#a66cef7b43af5d7fdd33b5d2dc766b2d0',1,'MQTTPubAckInfo_t']]],
-  ['packetidentifier_1',['packetIdentifier',['../struct_m_q_t_t_deserialized_info__t.html#af4df2a9926a4a68059195daa712d9b84',1,'MQTTDeserializedInfo_t']]],
-  ['passwordlength_2',['passwordLength',['../struct_m_q_t_t_connect_info__t.html#a818c4e212a12020a4109eb890ec96383',1,'MQTTConnectInfo_t']]],
-  ['payloadlength_3',['payloadLength',['../struct_m_q_t_t_publish_info__t.html#a7997964e11571f35f0c3b729db0f760f',1,'MQTTPublishInfo_t']]],
-  ['pbuffer_4',['pBuffer',['../struct_m_q_t_t_fixed_buffer__t.html#acea147448e044870fb36b7fa2347dbd6',1,'MQTTFixedBuffer_t']]],
-  ['pclientidentifier_5',['pClientIdentifier',['../struct_m_q_t_t_connect_info__t.html#a010f8f6993cbf8899648d5c515ff7884',1,'MQTTConnectInfo_t']]],
-  ['pingreqsendtimems_6',['pingReqSendTimeMs',['../struct_m_q_t_t_context__t.html#acca3efa4146d85f7e874c7c326e23556',1,'MQTTContext_t']]],
-  ['pnetworkcontext_7',['pNetworkContext',['../struct_transport_interface__t.html#aaf4702050bef8d62714a4d3900e95087',1,'TransportInterface_t']]],
-  ['ppassword_8',['pPassword',['../struct_m_q_t_t_connect_info__t.html#acec6c79a11d2f0f130802393f34d2b5e',1,'MQTTConnectInfo_t']]],
-  ['ppayload_9',['pPayload',['../struct_m_q_t_t_publish_info__t.html#afc28299f4f625f5e674bb61b42f03380',1,'MQTTPublishInfo_t']]],
-  ['ppublishinfo_10',['pPublishInfo',['../struct_m_q_t_t_deserialized_info__t.html#ac347273fae1e92b9cbeda1714066c1de',1,'MQTTDeserializedInfo_t']]],
-  ['premainingdata_11',['pRemainingData',['../struct_m_q_t_t_packet_info__t.html#ac66cedff052bc844ec9b296387df60bc',1,'MQTTPacketInfo_t']]],
-  ['ptopicfilter_12',['pTopicFilter',['../struct_m_q_t_t_subscribe_info__t.html#adb0b28240fdcd82a85f11cf2f8b5bbf0',1,'MQTTSubscribeInfo_t']]],
-  ['ptopicname_13',['pTopicName',['../struct_m_q_t_t_publish_info__t.html#aa80e8ca282d01630f878ad0afe81d7a4',1,'MQTTPublishInfo_t']]],
-  ['publishstate_14',['publishState',['../struct_m_q_t_t_pub_ack_info__t.html#a61314203ef87a231c6489c68b579de34',1,'MQTTPubAckInfo_t']]],
-  ['pusername_15',['pUserName',['../struct_m_q_t_t_connect_info__t.html#a1118d7d3251a11445318557280db53b4',1,'MQTTConnectInfo_t']]]
+  ['maxpacket_0',['maxPacket',['../struct_connack_seen_flags__t.html#a2a80bf96f74faedbc2ca0a4c76a9d573',1,'ConnackSeenFlags_t']]],
+  ['maxpacketsize_1',['maxPacketSize',['../struct_m_q_t_t_connection_properties__t.html#ad647e802a7aecda1394634f0c8e45e7e',1,'MQTTConnectionProperties_t']]],
+  ['maxqos_2',['maxQos',['../struct_connack_seen_flags__t.html#a8a16d4b14748953c66b9bf91368cbe42',1,'ConnackSeenFlags_t']]],
+  ['mqtt_5fpacket_5ftype_5fconnect_5fval_3',['MQTT_PACKET_TYPE_CONNECT_VAL',['../group__mqtt__constants.html#ga9436a90d8a7d4d11f7c4f663c6709e6f',1,'core_mqtt_serializer.h']]],
+  ['mqtt_5fpacket_5ftype_5fdisconnect_5fval_4',['MQTT_PACKET_TYPE_DISCONNECT_VAL',['../group__mqtt__constants.html#ga67861726887c5062b2c89386f84ae3fe',1,'core_mqtt_serializer.h']]],
+  ['mqtt_5fpacket_5ftype_5fpublish_5fval_5',['MQTT_PACKET_TYPE_PUBLISH_VAL',['../group__mqtt__constants.html#gadc4953a4727ab10c3207fdb210baadb0',1,'core_mqtt_serializer.h']]],
+  ['mqtt_5fpacket_5ftype_5fsubscribe_5fval_6',['MQTT_PACKET_TYPE_SUBSCRIBE_VAL',['../group__mqtt__constants.html#ga53e0f4eed48d43e774f88158c9492285',1,'core_mqtt_serializer.h']]],
+  ['mqtt_5fpacket_5ftype_5funsubscribe_5fval_7',['MQTT_PACKET_TYPE_UNSUBSCRIBE_VAL',['../group__mqtt__constants.html#ga5d2e37fa177353de06223e01a95b73b8',1,'core_mqtt_serializer.h']]]
 ];
